@@ -1,14 +1,16 @@
 
-import './App.css';
-import Home from './Component/Home.jsx';
+import Location from './Component/Nav/Location/Location';
+import Nav from './Component/Nav/Nav';
 
 function App() {
  
   return (
    
     <div className="App">
-      <Home/>
+    <Nav/>
+    <Location/>         
     </div>
+
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Nav from "./Nav"
+import Nav from "./Nav/Nav"
 
 function Home() {
   const [obj, setObj] = useState({})
@@ -19,7 +19,6 @@ useEffect(()=>{
  data()
 }, [])
   return <>
-   <Nav/>
    {obj.name}
   </>;
 }

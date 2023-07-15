@@ -1,0 +1,8 @@
+{
+    "name": "geliştirme ortamı",
+    "db": {
+        "dbuser": "artefilex",
+        "dbname": "shopdb"
+       
+    }
+}
