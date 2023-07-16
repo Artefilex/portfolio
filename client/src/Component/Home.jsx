@@ -2,11 +2,17 @@ import React, { useEffect, useState } from "react";
 import Ben from "../assests/image/ben.png"
 import "../assests/css/main.css"
 import Social from "./Social";
-
+import Skill from "./Skill";
 function Home() {
   const [obj, setObj] = useState({})
 
-
+  const skillsData = [
+    { name: 'HTML', level: 90 },
+    { name: 'CSS', level: 70 },
+    { name: 'JavaScript', level: 80 },
+    // Diğer becerileri buraya ekleyebilirsiniz
+  ];
+  
 useEffect(()=>{
  const data = async()=>{
   try{
@@ -20,7 +26,7 @@ useEffect(()=>{
  }
  data()
 }, [])
-  return <>
+  return <div className="main">
    {/* {obj.name} */}
 
    <header className="flex">  
@@ -37,9 +43,14 @@ useEffect(()=>{
    </div>
    <div className="header-logo flex">
    <img src={Ben}  alt="" />
-   </div>
+   </div> 
    </header>
-  </>;
+   <h1>Benim Becerilerim</h1>
+      {skillsData.map((skill, index) => (
+        <Skill key={index} skillName={skill.name} skillLevel={skill.level} />
+      ))}
+  </div>;
+
 }
 
 export default Home;

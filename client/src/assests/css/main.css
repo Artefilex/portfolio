@@ -1,3 +1,7 @@
+.main{
+    width: var(--size-full);
+}
+
 header {
   flex-direction: row;
   width: var(--size-full);
@@ -64,3 +68,23 @@ header .header-logo img {
 .project-btn:hover {
   color: var(--light-color);
 }
+
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #2196F3;
+  }
