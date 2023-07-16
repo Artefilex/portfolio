@@ -1,0 +1,28 @@
+nav{
+    background: var(--navbar-light);
+    
+}
+
+.navbar{
+ padding-top: 1rem;
+ align-items: center;
+ justify-content: space-around;
+}
+
+
+.navbar  .navbar-logo{
+    width: 6rem;
+    height:  var(--size-full);
+}
+    
+   
+
+.navbar .navbar-logo a{
+    width: var(--size-full);
+   align-items: center;
+}
+
+.navbar .navbar-logo a img{
+ /* filter: invert(100%); */
+   height: 40px;
+}

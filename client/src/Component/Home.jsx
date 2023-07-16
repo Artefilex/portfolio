@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Nav from "./Nav/Nav"
+import Ben from "../assests/image/ben.png"
+import "../assests/css/main.css"
+import Social from "./Social";
 
 function Home() {
   const [obj, setObj] = useState({})
@@ -19,7 +21,24 @@ useEffect(()=>{
  data()
 }, [])
   return <>
-   {obj.name}
+   {/* {obj.name} */}
+
+   <header className="flex">  
+   <div className="header-content flex">
+     <div className="header-content flex"> 
+     <div className="header-content-text flex">
+        <span> HEY THERE !</span>
+        <h2>I AM Barış Tunçdemir </h2>
+        <h3>Frontend Developer </h3>
+      </div>
+     <Social/>
+     </div>
+    <a href="/project" className="project-btn">SEE MY WORK</a>
+   </div>
+   <div className="header-logo flex">
+   <img src={Ben}  alt="" />
+   </div>
+   </header>
   </>;
 }
 

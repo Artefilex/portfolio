@@ -1,0 +1,25 @@
+h4{
+    width: var(--size-full);
+    
+}
+.footer-item{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-item .navbar{
+    /* height: 100%; */
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-item ul {
+    flex-direction: column;
+}
+
+.footer-item ul li a {
+   color: white;
+}
+
+.footer-item .navbar-logo{
+    display: none;
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+:root {
+  --card-light: rgb(250, 250, 250);
+  --body-bg-light: rgb(234, 234, 234);
+  --global-bg-dark: rgb(35, 35, 35);
+  --color-dashbord: rgb(72, 87, 79);
+  --color-dashbord-circle: rgb(44, 81, 61);
+  --color-title: rgb(65 87 76);
+  --body-bg-dark: rgb(20, 20, 20);
+  --light-color: rgb(250, 250, 250);
+  --dark-color: rgb(47, 47, 47);
+  --light-color-hover: rgb(121, 121, 121);
+  --icon: rgb(121, 121, 121);
+  --light-bg-hover: rgb(210, 208, 208);
+  --navbar-dark-bg: rgb(35, 35, 35);
+  --navbar-light-bg: rgb(250, 250, 250);
+  --navbar-box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  --button-box-shadow: rgba(0, 0, 0, 0.628) 0px 3px 8px;
+  --input-border: 1px solid rgb(186, 186, 186);
+  --light-border: 1px solid rgb(186, 186, 186);
+  --dark-border: 1px solid rgb(77, 77, 77);
+
+
+  --display-1: 0.5rem 0.25rem;
+  --display-2: 1rem 0.5rem;
+  --display-3: 2rem 1rem;
+  --display-4: 4rem 2rem;
+  --display-5: 0.75rem 1rem;
+  --display-6: 0.5rem 2rem;
+  --display-7: 1rem 2rem;
+  --display-8: 0.5rem 2rem;
+  --display-9: 0.5rem 1rem;
+  --size-full: 100%;
+  --size-xxl: 95%;
+  --size-xl: 90%;
+  --size-large: 85%;
+  --size-meium: 80%;
+  --size-small: 70%;
+  --size-form: 350px;
+  --size-blog: 255px;
+  --linear-button : linear-gradient(to right top, #062c29, #0b3532, #103e3b, #164744, #1b504e, #1b504f, #1b514f, #1b5150, #164947, #10413f, #0b3a37, #06322f);
+ --linear-color-1:linear-gradient(to right top, #062c29, #06332f, #063a36, #06413c, #064843, #0b4e49, #0f544e, #145a54, #1d605a, #256660, #2d6c67, #34726d);
+--linear-color-2: linear-gradient(to right top, #255f5a, #205c57, #1b5a54, #165752, #10554f, #0d514b, #0a4c47, #074843, #08403c, #093935, #0a312f, #0a2a28);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+  text-decoration: none;
+
+  color: var(--global-bg-dark)
+}
+a:hover{
+  transition: .2s ease-in-out;
+  color: var(--light-color-hover);
+}
+nav {
+  display: flex;
+  align-items: center;
+  width: var(--size-full);
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+   width: var(--size-full); 
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer {
+  min-height: 10rem;
+  position: relative;
+  bottom: 0;
+  width: var(--size-full);
+  background:var(--global-bg-dark);
+  color: var(--light-color);
+  padding: 2rem;
+}
+
+.App-Container{
+position: relative;
+ min-height: 95vh;
+}
