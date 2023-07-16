@@ -35,13 +35,17 @@
   --size-xxl: 95%;
   --size-xl: 90%;
   --size-large: 85%;
-  --size-meium: 80%;
+  --size-medium: 80%;
   --size-small: 70%;
   --size-form: 350px;
   --size-blog: 255px;
   --linear-button : linear-gradient(to right top, #062c29, #0b3532, #103e3b, #164744, #1b504e, #1b504f, #1b514f, #1b5150, #164947, #10413f, #0b3a37, #06322f);
  --linear-color-1:linear-gradient(to right top, #062c29, #06332f, #063a36, #06413c, #064843, #0b4e49, #0f544e, #145a54, #1d605a, #256660, #2d6c67, #34726d);
 --linear-color-2: linear-gradient(to right top, #255f5a, #205c57, #1b5a54, #165752, #10554f, #0d514b, #0a4c47, #074843, #08403c, #093935, #0a312f, #0a2a28);
+--linear-color-3: linear-gradient(to right top, #0f403c, #11534e, #126760, #127b73, #109086, #0f9187, #0d9187, #0b9288, #0c7e76, #0c6b64, #0b5853, #0a4642);
+--linear-color-4:  linear-gradient(to right top, #0e1521, #0f1c29, #0d2331, #0a2a39, #053140);
+--box-shadow-1: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+--box-shadow-2: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 *{
     box-sizing: border-box;
@@ -49,6 +53,7 @@
     padding: 0;
     list-style: none;
     font-family: 'Open Sans', sans-serif;
+    transition: 0.6s ease-in-out;
 }
 
 a{

@@ -3,15 +3,16 @@
 }
 
 header {
-  flex-direction: row;
+  flex-direction: column-reverse;
   width: var(--size-full);
   justify-content: space-around;
   height: max-content;
+  margin-bottom: 3rem;
 }
 header .header-content {
   flex-direction: column;
   align-items: center;
-  margin-left: 4rem;
+ 
 }
 header .header-content .header-content-text {
   flex-direction: column;
@@ -46,15 +47,40 @@ header .header-content .soccial-icons a:hover {
 
 header .header-logo {
   width: var(--size-full);
+  
 }
 
-header .header-logo img {
-  width: 200px;
+header .header-logo .img-background{
+ background: var(--linear-color-2);
+ border-bottom-left-radius: 8px;
+ border-top-right-radius: 8px;
+ border-bottom-right-radius: 10rem;
+ border-top-left-radius: 10rem;
+ box-shadow: var(--box-shadow-1);
+ position: relative;
+ z-index: -1;
+ transform: rotate(30deg);
+ width: 7rem;
+ height: 10.5rem;
+ left: 2.5rem;
+ top: 5rem;
 }
+
+
+
+
+header .header-logo img {
+  width: 150px;
+  position: relative;
+  right: 7rem;
+  z-index: -1;
+}
+
+
 .project-btn {
   position: relative;
   top: 1rem;
-  right: 3.5rem;
+  right: 0;
   background: var(--linear-button);
   padding: var(--display-9);
   color: var(--light-color);
@@ -70,21 +96,40 @@ header .header-logo img {
 }
 
 
-.skill-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+@media screen and (min-width: 400px ) {
+
+ 
+  header .header-logo .img-background{
+   
+    width: 10rem;
+    height: 15rem;
+    left: 6.5rem;
+    top:5rem;
   }
-  
-  .progress-bar {
+  header .header-logo img {
     width: 200px;
-    height: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
   }
-  
-  .progress {
-    height: 100%;
-    background-color: #2196F3;
-  }
+}
+
+
+
+@media screen and (min-width: 800px ) {
+    header{
+       flex-direction: row;
+       margin-bottom: 0;
+    }
+    header .header-content {
+      margin-left: 4rem;
+    }
+    .project-btn {
+      right: 3.5rem;
+    }
+    header .header-logo .img-background{  
+     left: 9rem;
+     top:5rem;
+    }
+    
+    header .header-logo img {
+     right: 5rem;
+    }
+}

@@ -1,13 +1,13 @@
 const app = require("express")
+const Skill = require("../models/skill")
 const router = app.Router()
 
-const product = {
-    "name": "ahmet",
-    "surname": "bla bla"
-}
+
 
 router.get("/",async (req,res)=>{
-    res.send(product)
+    const skills = await Skill.findAll()
+
+    res.send(skills)
 })
 
 

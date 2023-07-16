@@ -7,7 +7,7 @@ function App() {
  
   return (
    
-    <div className="App">
+    <div className="App flex" style={{flexDirection:"column"}}>
     <Nav/>
     <div className='App-Container  flex'><Location/> </div> 
     <Footer/>
