@@ -39,16 +39,17 @@
     align-items: center;
     gap: 0;
 }
-  .skill-content .skill-container .progress-bar {
+  .skill-content .skill-container  .progress-bar {
     width: var(--size-full);
     height: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #999fac;
+    box-shadow: var(--box-shadow-2);
     border-radius: 15px;
     overflow: hidden;
   }
   
-  .skill-content .skill-container .progress {
-    height: 100%;
+  .skill-content .skill-container .progress-bar .progress {
+    height:var(--size-full);
     background :var(--linear-color-3);
   }
 
@@ -64,5 +65,16 @@
   @media screen and (min-width: 800px ) {
     .skill-content .skill-container{
         width: var(--size-small);
+    }
+  }
+  @media screen and (min-width: 1200px ) {
+    .skill-content {
+        width: var(--size-xl);
+    }
+  }
+
+  @media screen and (min-width: 2000px ) {
+    .skill-content {
+        width: var(--size-large);
     }
   }

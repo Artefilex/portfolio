@@ -4,7 +4,7 @@ const router = app.Router()
 
 
 
-router.get("/",async (req,res)=>{
+router.get("/skills",async (req,res)=>{
     const skills = await Skill.findAll()
 
     res.send(skills)

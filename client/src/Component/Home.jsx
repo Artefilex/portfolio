@@ -6,7 +6,7 @@ import Skill from "./Skill";
 
 function Home() {
   return (
-    <div className="main">
+    <div className="main flex">
       <header className="flex">
         <div className="header-content flex">
           <div className="header-content flex">
