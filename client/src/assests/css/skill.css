@@ -15,11 +15,16 @@
 .skill-content h5{
     white-space: nowrap;
 }
-.skill-content h2, h4 ,h5{
+.skill-content h2, h4 ,h5,p{
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     background-image: var(--linear-color-4);
+}
+.skill-content .skill-container{
+  width: var(--size-xxl);
+  flex-direction: column;
+  gap:0.2rem
 }
 
 .skill-content .skillcard-container{
@@ -29,13 +34,51 @@
 
 .skill-content .skillcard-container .skillcard-context{
  flex-direction: column;
- align-items: flex-start;
+
 }
-.skill-content .skill-container{
-    width: var(--size-xxl);
-    flex-direction: column;
-    gap:0.2rem
-}
+
+
+.skill-content .skillcard-container .skillcard-context p {
+ text-transform: capitalize;
+ font-size: 2rem;
+ margin-left: 1rem;
+ background-image: var(--linear-color-1);
+ }
+ .skill-content .skillcard-container .skillcard-context ul  {
+   align-items: flex-start;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   width: var(--size-large);
+
+  }
+.skill-content .skillcard-container .skillcard-context ul li {
+   flex-direction: column;
+   width:9rem;
+   position: relative;
+  }
+  .skill-content .skillcard-container .skillcard-context ul li p {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .skill-content .skillcard-container .skillcard-context ul li .info-icon{
+    position: relative;
+    padding: 1rem;
+    border: var(--border-icon );
+    border-radius: 13rem;
+  }
+  .skill-content .skillcard-container .skillcard-context ul li .info-icon span{
+    position: absolute;
+    top: 3rem;
+    background: var(--white-bg);
+    font-size: 1.6rem;
+    color: var(--icon-span-color);
+    left: 1.6rem;
+  }
+  .skill-content .skillcard-container .skillcard-context ul li:nth-child(1) .info-icon span{
+    left: 1.1rem;
+  }
+  
 
 .skill-content .skill-container .skill-item {
     justify-content: space-around;
