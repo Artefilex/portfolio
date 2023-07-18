@@ -125,6 +125,7 @@
 
   .IntroCard img{
     max-width: 400px;
+    margin: 2rem 0;
   }
 
   .IntroCard .soccial-icons {

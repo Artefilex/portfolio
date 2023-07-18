@@ -2,8 +2,9 @@ import React from "react";
 import "../../assests/css/skill.css";
 import Social from "../../assests/image/Intro/3426526.jpg"
 import Proggraming from "../../assests/image/Intro/proggraming.jpg"
-import SocialIcon from "../Social"
+import SocialIcon from "./Social"
 import Contact from "../../assests/image/Intro/contact.jpg"
+import CvButton from "./CvButton";
 function IntroCard() {
   return (
     <div className="IntroCard flex">
@@ -41,6 +42,7 @@ function IntroCard() {
             my projects, feel free to contact me:
           </p> 
           <SocialIcon/>
+          <CvButton/>
         </div>
         <img src={Contact }  alt="" />
         

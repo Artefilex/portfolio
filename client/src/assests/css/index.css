@@ -198,3 +198,35 @@ footer {
   min-height: 95vh;
   align-items: center;
 }
+
+.btn-cv{
+  width: var(--size-blog);
+  border: none;
+  outline: none;
+  margin-top: 2rem;
+  background: transparent;
+  padding: var(--display-8);
+  border-bottom: var(--border-icon);
+ cursor: pointer;
+}
+
+.btn-cv span{
+  font-size: 1.5rem;
+  font-weight: 900;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: var(--linear-color-1);
+ 
+ 
+}
+
+.btn-cv:hover span{
+  color: var(--white-bg)
+}
+
+.btn-cv:hover{
+  border: none;
+  background: var(--linear-color-1);
+ 
+}

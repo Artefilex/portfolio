@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSkills } from "../../Reducer/skillreducer";
 import "../../assests/css/skill.css";
-import SkillCard from "./SkillCard";
+import SkillCard from "../Helpers/SkillCard";
 function Skill() {
   const { skills, loading } = useSelector((state) => state.skills);
 

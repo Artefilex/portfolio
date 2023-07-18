@@ -10,10 +10,6 @@ function Social() {
   <a href="https://twitter.com/baris_tuncdemir"><BsTwitter className="contact-icon"/></a>
   <a href="tel:+905061210625"> <BsFillTelephoneFill className="contact-icon" /></a>
   <a href="mailTo:baris.tncdmr@gmail.com"> <HiMail  className="contact-icon"/></a>
-   
-   
-  
-
    </div>;
 
 }
