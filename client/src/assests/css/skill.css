@@ -3,9 +3,11 @@
     align-items: center;
   
 }
-.skill-content h2{
-    text-align: center;
-}
+.skill-content h2 {
+  width: var(--size-full);
+      text-align: center;
+    }
+  
 .skill-content h4{
     width: 4.5rem;
     white-space: nowrap;
@@ -20,7 +22,9 @@
     background-image: var(--linear-color-4);
 }
 
-
+.skill-content .skillcard-container{
+  flex-direction: column;
+}
 .skill-content .skill-container{
     width: var(--size-xxl);
     flex-direction: column;
@@ -57,15 +61,21 @@
 
   @media screen and (min-width: 400px ) {
     .skill-content .skill-container{
-        width: var(--size-xl);
+        width: var(--size-large);
        
     }
   }
+ 
   
-  @media screen and (min-width: 800px ) {
-    .skill-content .skill-container{
-        width: var(--size-small);
-    }
+  @media  screen and (min-width: 900px) {
+    .skill-content{
+      flex-direction: row;
+      align-items: flex-start;
+  }
+  .skill-content .skill-container{
+    width: 400px;
+}
+ 
   }
   @media screen and (min-width: 1200px ) {
     .skill-content {

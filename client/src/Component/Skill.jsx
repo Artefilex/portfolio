@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSkills } from "../Reducer/skillreducer";
 import "../assests/css/skill.css";
+import SkillCard from "./SkillCard";
 function Skill() {
   const { skills, loading } = useSelector((state) => state.skills);
 
@@ -17,8 +18,9 @@ function Skill() {
 
   return (
     <div className="skill-content flex">
-      <h2>Skills</h2>
-      <div className="skill-container flex">
+    
+   <div className="flex">
+   <div className="skill-container flex">
         {skills &&
           skills.map((skill, index) => (
             <div className="skill-item flex" key={index}>
@@ -43,6 +45,8 @@ function Skill() {
               
           ))}
       </div>
+   </div>  
+        <SkillCard/> 
     </div>
   );
 }

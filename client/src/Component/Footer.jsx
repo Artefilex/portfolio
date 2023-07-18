@@ -1,19 +1,20 @@
 import React from "react";
-import Nav from "./Nav/Nav";
+import Logo from "../assests/image/logo.png"
 import "../assests/css/footer.css";
-import Map from "../assests/Map";
+
 function Footer() {
   return (
     <footer className="flex">
+      <Logo/>
       <div className="footer-side flex">
-        <div className="map flex">
-          <Map />
+          <h3>FOLLOW ME</h3>
+        <div className="flex">
+          ---icon-- 
+          linkedin twitter github medium 
+        </div> 
+       <span>  Copyright ©2023 All rights reserved </span>
         </div>
-        <div className="footer-left flex">
-          
-         
-        </div>
-      </div>
+       
     </footer>
   );
 }

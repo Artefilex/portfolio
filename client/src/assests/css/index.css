@@ -79,6 +79,7 @@ nav {
   display: flex;
    width: var(--size-full); 
   justify-content: center;
+  align-items: flex-start;
   gap: 1rem;
 }
 

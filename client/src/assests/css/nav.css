@@ -1,132 +1,116 @@
-nav{
-    background: var(--navbar-light);
-   /* padding: var(--display-8); */
-    box-shadow: var(--navbar-box-shadow);
+nav {
+  background: var(--navbar-light);
+  /* padding: var(--display-8); */
+  box-shadow: var(--navbar-box-shadow);
 }
 
-.active{
-    display: flex !important;
+.active {
+  display: flex !important;
 }
-.navbar{
- align-items: center;
- justify-content: space-between;
- height: 4rem;
-}
-
-
-.navbar  .navbar-logo{
-     width: 6rem; 
-    height:  var(--size-full);
-    justify-content: flex-start;
-}
-.navbar .navbar-item{
-    width: 6rem;
+.navbar {
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
 }
 
+.navbar .navbar-logo {
+  width: 6rem;
+  height: var(--size-full);
+  justify-content: flex-start;
+  align-items: center;
+}
+.navbar .navbar-item {
+  width: 6rem;
+}
 
-.navbar .navbar-item .navbar-btn button{
+.navbar .navbar-item .navbar-btn button {
   border: none;
   outline: none;
   background: transparent;
   font-size: 1.5rem;
 }
 
-
- .navbar .navbar-item .navbar-links{
-    position: absolute;
-    top: 3rem;
-    right: 0;
-    width: var(--size-full);
-    z-index: 10000;
-    background: var( --white-bg);
-    padding: var(--display-1);
-    box-shadow: var(--navbar-box-shadow);
-} 
-.navbar .navbar-item .navbar-links ul {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    z-index: 100; 
-    margin-right: 2rem;
+.navbar .navbar-item .navbar-links {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: var(--size-full);
+  z-index: 10000;
+  background: var(--white-bg);
+  padding: var(--display-1);
+  box-shadow: var(--navbar-box-shadow);
 }
-.navbar .navbar-item .navbar-links ul li{
-    padding: var(--display-1);
+.navbar .navbar-item .navbar-links ul {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+  margin-right: 2rem;
+}
+.navbar .navbar-item .navbar-links ul li {
+  padding: var(--display-1);
 }
 .navbar .navbar-item .navbar-links ul li:hover {
-    background: var(--linear-color-5);
+  background: var(--linear-color-5);
+  box-shadow: var(--navbar-box-shadow);
+  transition: 0.5s ease-in-out;
+  border-radius: 2px;
+}
+
+.navbar .navbar-logo a {
+  width: 6rem;
+  align-items: center;
+}
+
+.navbar .navbar-logo a img {
+  /* filter: invert(100%); */
+  height: 40px;
+}
+
+
+
+@media screen and (min-width: 500px) {
+  .navbar .navbar-item .navbar-links ul {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .navbar .navbar-item .navbar-links {
+    position: relative;
+    top: 0rem;
+    z-index: 10000;
+  }
+  .navbar .navbar-item {
+    width: var(--size-full);
+  }
+  .navbar .navbar-logo {
+    width: var(--size-full);
+  }
+  .navbar .navbar-item .navbar-links {
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .navbar .navbar-item .navbar-links ul li:hover {
+    background: transparent;
     box-shadow: var(--navbar-box-shadow);
     transition: 0.5s ease-in-out;
-    border-radius: 2px;
-}
-
-.navbar .navbar-logo a{
-   width: 6rem;
-   align-items: center;
- 
-}
-
-.navbar .navbar-logo a img{
- /* filter: invert(100%); */
-   height: 40px;
-}
-
-
-
-@media screen and (min-width: 400px ) {
-    .skill-content .skill-container{
-        width: var(--size-xl);
-    }
   }
-  
-@media screen and (min-width:500px) {
-    .navbar .navbar-item .navbar-links ul{
-        display: flex !important;
-        flex-direction: row;
-        gap: 1rem;
-    }
-    .navbar .navbar-item .navbar-links{
-        position: relative;
-        top: 0rem;
-        z-index: 10000;
-    } 
-    .navbar .navbar-item{
-        width: var(--size-full);
-    }
-    .navbar .navbar-logo{
-        width: var(--size-full);
-    }
-    .navbar .navbar-item .navbar-links{
-        padding: 0;
-        box-shadow:none;
-    }
-    
-    .navbar .navbar-item .navbar-links ul li:hover {
-        background: transparent;
-        box-shadow: var(--navbar-box-shadow);
-        transition: 0.5s ease-in-out;
-        
-    }
-   
 }
 
-  @media screen and (min-width: 800px ) {
-    .skill-content .skill-container{
-        width: var(--size-small);
-    }
-    .navbar .navbar-item{
-        width: var(--size-full);
-    }
-    .navbar .navbar-logo{
-        width: var(--size-full);
-        justify-content: center;
-    }
-    nav{
-        background: var(--navbar-light);
-        padding: 0;
-      
-    }
-     .navbar{
-      gap: 18rem;
-      
-    }
+@media screen and (min-width: 800px) {
+  .navbar .navbar-item {
+    width: var(--size-full);
   }
+  .navbar .navbar-logo {
+    width: var(--size-full);
+    justify-content: center;
+  }
+  nav {
+    background: var(--navbar-light);
+    padding: 0;
+  }
+  .navbar {
+    gap: 18rem;
+  }
+}
