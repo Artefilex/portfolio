@@ -1,20 +1,21 @@
 import React from "react";
-// import { AiFillHtml5 } from "react-icons/ai";
-// import { FaCss3Alt, FaReact, FaSass, FaNodeJs } from "react-icons/fa";
-// import { GrMysql } from "react-icons/gr";
-// import { BiLogoJavascript } from "react-icons/bi";
+import{ BiLogoJavascript,BiLogoGithub } from "react-icons/bi";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+
 function SkillCard() {
   return (
     <div className="skillcard-container flex">
       <h2>Experince</h2>
 
-      <div className="flex">
-      2.5 years of learning process 
-      24 repositories on github 
-       7 HTML css Js Project 
-       8 React Project
-      2 Nodejs project 
-      </div>  
+      <div className="skillcard-context flex">
+        <p>I'm thrilled to share my 2.5-year learning journey with you! </p>
+        <ul>
+          <li><BiLogoGithub className="icon github"/> 24 repositories on GitHub</li>
+          <li><BiLogoJavascript className="icon javascript"/> 7 HTML CSS JS Projects</li>
+          <li><FaReact className="icon react"/> 8 React Projects</li>
+          <li><FaNodeJs className="icon nodejs"/> 2 Node.js Projects</li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -9,6 +9,7 @@ header {
   justify-content: space-around;
   height: max-content;
   margin-bottom: 3rem;
+ 
 }
 header .header-content {
   flex-direction: column;

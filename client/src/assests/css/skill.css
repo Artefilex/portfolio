@@ -1,7 +1,7 @@
 .skill-content{
     flex-direction: column;
     align-items: center;
-  
+    margin-top: 2rem
 }
 .skill-content h2 {
   width: var(--size-full);
@@ -24,11 +24,17 @@
 
 .skill-content .skillcard-container{
   flex-direction: column;
+
+}
+
+.skill-content .skillcard-container .skillcard-context{
+ flex-direction: column;
+ align-items: flex-start;
 }
 .skill-content .skill-container{
     width: var(--size-xxl);
     flex-direction: column;
-    gap:0.6rem
+    gap:0.2rem
 }
 
 .skill-content .skill-container .skill-item {
