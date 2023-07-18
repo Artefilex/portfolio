@@ -1,7 +1,7 @@
 import React from "react";
 import { BiLogoJavascript, BiLogoGithub } from "react-icons/bi";
 import { FaReact, FaNodeJs } from "react-icons/fa";
-
+import "../../assests/css/skill.css"
 function SkillCard() {
   return (
     <div className="skillcard-container flex">

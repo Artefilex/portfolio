@@ -1,7 +1,8 @@
 .skill-content{
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem
+    margin: 2rem 0rem;
+    
 }
 .skill-content h2 {
   width: var(--size-full);
@@ -24,8 +25,10 @@
 .skill-content .skill-container{
   width: var(--size-xxl);
   flex-direction: column;
-  gap:0.2rem
+  gap:0.1rem;
+  margin-top: 2rem;
 }
+
 
 .skill-content .skillcard-container{
   flex-direction: column;
@@ -106,6 +109,35 @@
     background :var(--linear-color-3);
   }
 
+
+  .IntroCard {
+    flex-direction: column;
+    width: var(--size-small);
+  }
+  .IntroCard h2{
+    margin-bottom: 1rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: var(--linear-color-1);
+    
+  }
+
+  .IntroCard img{
+    max-width: 400px;
+  }
+
+  .IntroCard .soccial-icons {
+    margin-top: 2rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: var(--size-small);
+  }
+  .IntroCard .soccial-icons .contact-icon{
+     font-size: 2rem;
+     color: var(--icon-color)
+  }
+  
 
 
   @media screen and (min-width: 400px ) {

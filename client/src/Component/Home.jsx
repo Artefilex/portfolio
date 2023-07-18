@@ -2,9 +2,11 @@
 import Ben from "../assests/image/ben2.png";
 import "../assests/css/main.css";
 import Social from "./Social";
-import Skill from "./Skill";
+import Skill from "./Skills/Skill";
+import IntroCard from "./Skills/IntroCard";
 
 function Home() {
+ 
   return (
     <div className="main flex">
       <header className="flex">
@@ -24,10 +26,11 @@ function Home() {
         <div className="header-logo flex">
           <div className="img-background"></div>
           <img src={Ben} alt="" />
+          
         </div>
-      </header>
-      
+      </header>  
       <Skill/>
+      <IntroCard/>
     </div>
   );
 }
