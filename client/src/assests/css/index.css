@@ -23,6 +23,7 @@
   --light-border: 1px solid rgb(186, 186, 186);
   --dark-border: 1px solid rgb(77, 77, 77);
   --border-icon: 3px solid rgb(13, 99, 92);
+  --border-white: 2px solid rgb(186, 186, 186);
   --icon-span-color: rgb(25, 112, 96);
   --icon-color: rgb(63, 72, 70);
   --light-bg: rgb(210, 208, 208);
@@ -41,6 +42,7 @@
   --size-large: 85%;
   --size-medium: 80%;
   --size-small: 70%;
+  --size-half: 50%;
   --size-form: 350px;
   --size-blog: 255px;
   --linear-button: linear-gradient(
@@ -126,11 +128,7 @@
     #fcfcfc,
     #ffffff
   );
-  --box-shadow-1: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  --box-shadow-2: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  --linear-color-6: linear-gradient(to right top, #323b3c, #36484a, #395657, #3c6464, #3f7271, #3f7271, #3f7270, #3f7270, #3c6463, #395656, #364949, #323c3c);
 }
 * {
   box-sizing: border-box;
@@ -172,15 +170,7 @@ nav {
 .icon:hover {
   color: black;
 }
-footer {
-  min-height: 10rem;
-  position: relative;
-  bottom: 0;
-  width: var(--size-full);
-  background: var(--light-bg);
-  color: var(--light-color);
-  padding: 2rem;
-}
+
 .github:hover {
   color: rgb(28, 33, 40);
 }
@@ -200,10 +190,9 @@ footer {
 }
 
 .btn-cv{
-  width: var(--size-blog);
+  width: var(--size-xl);
   border: none;
   outline: none;
-  margin-top: 2rem;
   background: transparent;
   padding: var(--display-8);
   border-bottom: var(--border-icon);
@@ -217,8 +206,6 @@ footer {
   background-clip: text;
   color: transparent;
   background-image: var(--linear-color-1);
- 
- 
 }
 
 .btn-cv:hover span{
@@ -229,4 +216,9 @@ footer {
   border: none;
   background: var(--linear-color-1);
  
+}
+@media screen and (min-width: 400px) {
+  .btn-cv{
+    width: var(--size-blog);
+  }
 }

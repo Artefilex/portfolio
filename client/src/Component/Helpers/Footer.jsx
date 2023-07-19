@@ -1,20 +1,18 @@
 import React from "react";
-import Logo from "../assests/image/logo.png"
-import "../assests/css/footer.css";
+import Logo from "../../assests/image/main/logo.png";
+import "../../assests/css/footer.css";
 
 function Footer() {
+   const getFullYear = new Date().getFullYear()
+
   return (
     <footer className="flex">
-      <Logo/>
+      <img src={Logo} alt="" />
       <div className="footer-side flex">
-          <h3>FOLLOW ME</h3>
         <div className="flex">
-          ---icon-- 
-          linkedin twitter github medium 
-        </div> 
-       <span>  Copyright ©2023 All rights reserved </span>
+        <span> Copyright ©{getFullYear} All rights reserved </span>
         </div>
-       
+      </div>
     </footer>
   );
 }

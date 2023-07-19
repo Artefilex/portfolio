@@ -1,7 +1,7 @@
 import React, { useState ,useEffect} from "react";
 import Links from "./Links/Links";
 import "../../assests/css/nav.css";
-import Logo from "../../assests/image/logo.png";
+import Logo from "../../assests/image/main/logo.png";
 import { Link } from "react-router-dom";
 import {  GiHamburgerMenu } from "react-icons/gi"
 import { GrClose} from "react-icons/gr"

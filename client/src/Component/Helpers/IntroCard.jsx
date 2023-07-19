@@ -7,9 +7,9 @@ import Contact from "../../assests/image/Intro/contact.jpg"
 import CvButton from "./CvButton";
 function IntroCard() {
   return (
-    <div className="IntroCard flex">
-      <div className="IntroCard-contanier flex">
-        <div className="Introcard-context left-card ">
+    <div className="IntroCard  flex">
+      <div className="IntroCard-contanier right-card  flex">
+        <div className="Introcard-context ">
           <h2>What I Do</h2>
           <p>
             I'm a passionate web developer with a focus on building interactive
@@ -21,7 +21,7 @@ function IntroCard() {
       </div>
       <div className="IntroCard-contanier flex">
         <img src={Proggraming}  alt="" />
-        <div className="Introcard-context  right-card">
+        <div className="Introcard-context">
           <h2>GitHub Highlights</h2>
          
           <p>
@@ -33,16 +33,18 @@ function IntroCard() {
         </div>
         <img src="" alt="" />
       </div>
-      <div className="IntroCard-contanier flex">
-        <div className="Introcard-context center-card">
+      <div className="IntroCard-contanier right-card flex">
+        <div className="Introcard-context ">
           <h2>Let's Connect!</h2>
           <p>
             I'm open to collaborations and always excited to learn from others.
             If you're interested in working together or want to know more about
             my projects, feel free to contact me:
           </p> 
-          <SocialIcon/>
+         <div className="flex  intro-card-buttons ">
+         <SocialIcon/>
           <CvButton/>
+         </div>
         </div>
         <img src={Contact }  alt="" />
         
