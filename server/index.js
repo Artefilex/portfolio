@@ -4,9 +4,9 @@ const app = express();
 const cors = require("cors")
 const sequelizeDb = require("./db/sql")
 const dummyData = require("./db/dummydata")
+const bodyParser = require("body-parser");
 
-
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors({
     origin: "*",
     methods: ["GET", "POST"]

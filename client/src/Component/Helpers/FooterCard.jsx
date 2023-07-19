@@ -7,11 +7,19 @@ function FooterCard() {
   const handleChange = (e) => {
     const { value } = e.target;
     setUserMail(value); 
+   
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userMail);
+    fetch("http://localhost:4000/",{
+      method: "POST",
+      headers: {"Content-Type": "application/Json"},
+      body: JSON.stringify({ email: userMail })
+     }).then(() =>{
+       console.log("new mail ")
+     })
     setUserMail(""); 
   };
   return <div className="flex footercard">
