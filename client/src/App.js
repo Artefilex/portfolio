@@ -9,7 +9,7 @@ function App() {
     <Nav />
     <div className="App-Container  flex">
       <Location />
-       
+    
     </div>
   </div>;
 }

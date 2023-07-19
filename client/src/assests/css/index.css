@@ -139,6 +139,11 @@
   transition: 0.5s ease-in-out;
 }
 
+.About{
+  flex-direction: column;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
 
@@ -217,6 +222,11 @@ nav {
   background: var(--linear-color-1);
  
 }
+
+
+
+
+
 @media screen and (min-width: 400px) {
   .btn-cv{
     width: var(--size-blog);

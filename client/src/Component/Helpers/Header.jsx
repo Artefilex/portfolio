@@ -1,8 +1,12 @@
 import React from "react";
 import Ben from "../../assests/image/main/ben2.png";
 import "../../assests/css/main.css";
-import { Link } from "react-router-dom";
+import { Link ,useLocation } from "react-router-dom";
+import CvButton from "./CvButton"
 function Header() {
+
+const location = useLocation()
+
   return (
     <header className="flex">
       <div className="header-content flex">
@@ -11,9 +15,15 @@ function Header() {
             <span> HEY THERE !</span>
             <h2>I AM Barış Tunçdemir </h2>
             <h3>Frontend Developer </h3>
+           { location.pathname ==="/about" ? (
+             <CvButton/>          
+           ):(
             <Link to={"/blog"} className="project-btn">
-              <span> CHECK OUT MY BLOG</span>
-            </Link>
+            <span> CHECK OUT MY BLOG</span>
+          </Link>
+           )
+
+           }
           </div>
         </div>
       </div>

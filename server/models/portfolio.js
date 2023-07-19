@@ -15,7 +15,7 @@ const Portfolio = sequelize.define(
       projecturl:{
         type:  DataTypes.STRING, 
         allowNull: false,
-       }  
+       }
     },
     {
       timestamps: false,
