@@ -1,18 +1,17 @@
 import React from "react";
 import "../../assests/css/about.css";
+import Certicate from "./Certicate";
 function AboutSelf() {
   return (
     <div className="about-container flex">
-        <h2>Who Am I </h2>
+      <h2>What I Do </h2>
       <p>
-        2.5 yıl önce Frontend Developer olmak için kendimi geliştirmeye başladım .
-        Her geçen gün kendime yeni bilgiler yeni teknolojiler katarak projelerimde
-        kullanmaya özen gösteriyorum.
+        I started to improve myself to become a Frontend Developer 2.5 years
+        ago. Every day, I strive to add new knowledge and technologies to my
+        skill set and incorporate them into my projects.
       </p>
-      <p>
-        Öğrendiğim bilgiler doğrultunda projelerimdeki sorunlara çözüm buluyorum.   
-      </p>
-      <p>Frontend developer olarak ileri düzey bilgi öğrenmeye odaklanıyorum</p>
+      <p>I am focused on learning advanced knowledge as a Frontend Developer.</p>
+       <Certicate/>
     </div>
   );
 }

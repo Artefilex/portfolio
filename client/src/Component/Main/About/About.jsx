@@ -9,7 +9,7 @@ function About() {
     <Skill/>
     <AboutSelf/>
     <Card/>
-    
+  
   </div>;
 }
 
