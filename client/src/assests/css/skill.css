@@ -31,43 +31,43 @@ p {
   margin-top: 2rem;
 }
 
-.skill-content .skillcard-container {
+ .skillcard-container {
   flex-direction: column;
 }
 
-.skill-content .skillcard-container .skillcard-context {
+ .skillcard-container .skillcard-context {
   flex-direction: column;
 }
 
-.skill-content .skillcard-container .skillcard-context p {
+ .skillcard-container .skillcard-context p {
   text-transform: capitalize;
   font-size: 2rem;
   margin-left: 1rem;
   background-image: var(--linear-color-1);
 }
-.skill-content .skillcard-container .skillcard-context ul {
+ .skillcard-container .skillcard-context ul {
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
   width: var(--size-large);
 }
-.skill-content .skillcard-container .skillcard-context ul li {
+ .skillcard-container .skillcard-context ul li {
   flex-direction: column;
   width: 9rem;
   position: relative;
 }
-.skill-content .skillcard-container .skillcard-context ul li p {
+ .skillcard-container .skillcard-context ul li p {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
 }
-.skill-content .skillcard-container .skillcard-context ul li .info-icon {
+ .skillcard-container .skillcard-context ul li .info-icon {
   position: relative;
   padding: 1rem;
   border: var(--border-icon);
   border-radius: 13rem;
 }
-.skill-content .skillcard-container .skillcard-context ul li .info-icon span {
+ .skillcard-container .skillcard-context ul li .info-icon span {
   position: absolute;
   top: 3rem;
   background: var(--white-bg);
@@ -75,7 +75,7 @@ p {
   color: var(--icon-span-color);
   left: 1.6rem;
 }
-.skill-content
+
   .skillcard-container
   .skillcard-context
   ul

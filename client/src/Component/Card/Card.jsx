@@ -23,12 +23,13 @@ function Card() {
   
 
   return <div className="Project-container flex">
+    <h1> My Websites</h1>
  {projects.map((project) => (
         <div className="project-info flex" key={project.id}>
           <div className="project-header flex">
           <h2>{project.header}</h2>
             <div className="scrollable" ><p >{project.content}</p></div>
-            <Link className="btn-project" to={`${project.projecturl}`}>  <span>{project.header}</span> </Link>
+            <Link className="btn-project" to={`${project.projecturl}`}>  <span>Go to Project</span> </Link>
           </div>
         <div className="project-iframe flex" >
           <iframe title={project.id} src={`${project.projecturl}`}  width="100%" height="400"></iframe>

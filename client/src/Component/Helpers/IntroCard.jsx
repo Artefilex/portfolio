@@ -8,7 +8,8 @@ import CvButton from "./CvButton";
 function IntroCard() {
   return (
     <div className="IntroCard  flex">
-      <div className="IntroCard-contanier right-card  flex">
+      <div className="IntroCard-contanier  flex">
+      <img src={Social} alt="" /> 
         <div className="Introcard-context ">
           <h2>What I Do</h2>
           <p>
@@ -17,10 +18,10 @@ function IntroCard() {
             ago, and I've been honing my skills ever since.
           </p>
         </div>
-          <img src={Social} alt="" /> 
+         
       </div>
-      <div className="IntroCard-contanier flex">
-        <img src={Proggraming}  alt="" />
+      <div className="IntroCard-contanier  flex">
+        
         <div className="Introcard-context">
           <h2>GitHub Highlights</h2>
          
@@ -31,9 +32,10 @@ function IntroCard() {
             always eager to take on new challenges.
           </p>
         </div>
-        <img src="" alt="" />
+        <img src={Proggraming}  alt="" />
       </div>
-      <div className="IntroCard-contanier right-card flex">
+      <div className="IntroCard-contanier flex">
+      <img src={Contact }  alt="" />
         <div className="Introcard-context ">
           <h2>Let's Connect!</h2>
           <p>
@@ -46,7 +48,7 @@ function IntroCard() {
           <CvButton/>
          </div>
         </div>
-        <img src={Contact }  alt="" />
+      
         
       </div>
     </div>

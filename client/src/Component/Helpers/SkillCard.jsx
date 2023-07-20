@@ -6,7 +6,6 @@ function SkillCard() {
   return (
     <div className="skillcard-container flex">
       <h2>Experince</h2>
-
       <div className="skillcard-context flex">
         <p>I'm thrilled to share my 2.5-year learning journey with you! </p>
         <ul className="flex">

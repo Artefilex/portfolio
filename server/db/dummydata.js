@@ -29,23 +29,18 @@ async function populate() {
         
       },
       {
-        header: "Coffe Website",
-        content:"A simple project I created 2 years ago using HTML, CSS, and JavaScript.",
-        projecturl: "https://artefilex-coffe.netlify.app/index.html",
-       
-      },
-      {
-        header: "Course App",
-        content: "A simple course website I made 1.5 years ago using HTML, CSS, and JavaScript.",
-        projecturl: "https://simple-course-app.netlify.app/",
-       
-      },
-      {
         header: "CoinFlex",
         content:"CoinFlex is a project I built using React, featuring a user-friendly interface that allows users to utilize a comprehensive calculator for calculating potential earnings based on annual, monthly, and daily interest rates of selected banks. Moreover, the platform keeps users up-to-date with daily foreign exchange rates and enables them to create personalized news entries categorized under specific topics.go to the credit url and start the calculation ",
         projecturl: "https://eclectic-hummingbird-d2cdec.netlify.app",
        
       },
+      {
+        header: "Course App",
+        content: "A simple course website built using HTML, CSS, and JavaScript.The original owner of the design is Mr. Web Designer's YouTube channel. I made the Navbar position change based on the scroll. ",
+        projecturl: "https://simple-course-app.netlify.app/",
+       
+      },
+      
     ]);
   }
 }
