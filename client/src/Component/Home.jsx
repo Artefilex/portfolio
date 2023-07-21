@@ -1,10 +1,10 @@
 import "../assests/css/main.css";
 
-import IntroCard from "./Helpers/IntroCard";
+import IntroCard from "./Card/IntroCard";
 import Header from "./Helpers/Header";
-import FooterCard from "./Helpers/FooterCard";
+import FooterCard from "./Card/FooterCard";
 import Footer from "./Helpers/Footer";
-import SkillCard from "./Helpers/SkillCard";
+import SkillCard from "./Card/SkillCard";
 
 function Home() {
  

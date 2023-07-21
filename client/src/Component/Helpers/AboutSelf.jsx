@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../../assests/css/about.css";
-import logo from "../../assests/image/main/ben.png";
-import hire from "../../assests/image/main/hire.jpg"
+import startIntro from "../../assests/image/main/start.jpg";
+import hire from "../../assests/image/main/hire.jpg";
+import idea from "../../assests/image/main/idea.jpg";
 function AboutSelf() {
   const [myage, setMyage] = useState();
   useEffect(() => {
@@ -28,7 +29,7 @@ function AboutSelf() {
           </p>
         </div>
         <div className="about-image flex">
-          <img src={logo} width={200} alt="" />
+          <img src={startIntro} alt="logo" />
         </div>
       </div>
       <div className="about-card flex">
@@ -44,20 +45,23 @@ function AboutSelf() {
           </p>
         </div>
         <div className="about-image flex">
-          <img src={logo} width={200} alt="" />
+          <img src={idea} alt="idea" />
         </div>
       </div>
 
       <div className="about-card flex">
         <div className="about-header hire-content flex">
           <h1>Why Should You Hire Me </h1>
-          <ul className="flex" >
-            <li> 1. I am Focus dirrectly project </li>
-            <li> </li>
+          <ul className="flex">
+            <li> 1. My communication skills are strong. </li>
+            <li> 2. I am open to continuous self-improvement. </li>
+            <li> 3. I write my projects in an organized and comprehensible manner.</li>
+            <li> 4. I can develop responsive designs. </li>
+            <li> 5. I approach problems with a solution-oriented mindset. </li>
           </ul>
         </div>
         <div className="about-image flex">
-          <img src={hire}  alt="" />
+          <img src={hire} alt="idea" />
         </div>
       </div>
     </div>
