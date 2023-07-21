@@ -2,29 +2,35 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .slider-container{
-    width: 70%;
-    margin: 10rem auto;
-    height: 20rem ;
+    width: var(--size-full);
+    margin: 1rem auto;
+    /* height: 25rem ; */
+    padding: 0rem 1rem;
   }
   
   .slide img {
-    width: 20rem;
-    margin: 0 auto;
+    width: 100%;
+    box-shadow: var(--container-box-shadow);
+    margin: 5rem auto;
+  }
+  .slide img:active{
+    border: none;
+    cursor: pointer;
   }
   
   .slide {
-    transform: scale(0.2);
+    transform: scale(0.1);
     transition: transform 300ms;
-    opacity: 0.5;
+    opacity: 0.1;
   }
   
   .activeSlide {
-    transform: scale(1.1);
+    transform: scale(2);
     opacity: 1;
   }
   
   .arrow {
-    background-color: #fff;
+    background:transparent;
     position: absolute;
     cursor: pointer;
     z-index: 10;
@@ -32,11 +38,13 @@
   
   .arrow svg {
     transition: color 300ms;
+    color: rgb(6, 34, 37);
   }
   
   .arrow svg:hover {
-    color: #68edff;
+    color: rgb(6, 34, 37);
   }
+
   
   .next {
     right: 0%;
@@ -47,3 +55,44 @@
     left: 0%;
     top: 50%;
   }
+ 
+  @media screen and ( min-width: 600px) {
+    .slide img {
+      width: 12rem;
+      box-shadow: var(--container-box-shadow);
+      margin: 10rem auto;
+      padding: 1rem ;
+    }
+    .slide {
+      transform: scale(0.2);
+   
+      opacity: 0.5;
+    }
+    .activeSlide {
+      transform: scale(1.6);
+      opacity: 1;
+    }
+  
+  }
+
+  @media screen and ( min-width: 900px) {
+    .slide img {
+      width: 13rem;
+      box-shadow: var(--container-box-shadow);
+      margin: 10rem auto;
+    }
+    
+  }
+  @media screen and ( min-width: 1200px) {
+    .slider-container{
+      width: var(--size-small);
+    }
+    .slide img {
+      width: 16rem;
+      margin: 12rem auto;
+    }
+    .activeSlide {
+      transform: scale(2);
+      opacity: 1;
+    }
+  } 

@@ -202,12 +202,10 @@ p {
 }
 @media screen and (min-width: 1200px) {
   .skill-content {
-    width: var(--size-xl);
+    width: var(--size-small);
+  }
+  .skill-graphic{
+    justify-content: flex-start;
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .skill-content {
-    width: var(--size-large);
-  }
-}

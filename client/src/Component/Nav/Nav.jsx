@@ -36,7 +36,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
       </div>
       <div className="navbar-item flex ">
      
-     <div className="navbar-links">
+     <div className="navbar-links flex">
      {
       <ul className={`${show ? 'active' : ''}`}> <Links /></ul> 
       }

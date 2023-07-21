@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assests/css/about.css";
-import Certicate from "./Certicate";
+
 function AboutSelf() {
   return (
     <div className="about-container flex">
@@ -11,7 +11,7 @@ function AboutSelf() {
         skill set and incorporate them into my projects.
       </p>
       <p>I am focused on learning advanced knowledge as a Frontend Developer.</p>
-       <Certicate/>
+      
     </div>
   );
 }

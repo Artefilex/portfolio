@@ -81,7 +81,7 @@ nav {
     z-index: 10000;
   }
   .navbar .navbar-item {
-    width: var(--size-full);
+    width:var(--size-full);
   }
   .navbar .navbar-logo {
     width: var(--size-full);
@@ -99,9 +99,9 @@ nav {
 }
 
 @media screen and (min-width: 800px) {
-  .navbar .navbar-item {
+  /* .navbar .navbar-item {
     width: var(--size-full);
-  }
+  } */
   .navbar .navbar-logo {
     width: var(--size-full);
     justify-content: center;

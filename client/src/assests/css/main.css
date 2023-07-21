@@ -158,3 +158,9 @@ header .header-logo img {
 }
 
 
+@media screen and (min-width: 1200px ) {
+  .header{
+    width: var(--size-small);
+  }
+  
+}

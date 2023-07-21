@@ -8,7 +8,7 @@ function Header() {
 const location = useLocation()
 
   return (
-    <header className="flex">
+    <header className="header flex">
       <div className="header-content flex">
         <div className="header-content flex">
           <div className="header-content-text flex">

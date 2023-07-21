@@ -59,7 +59,7 @@ p {
 }
 @media screen and (min-width: 1200px) {
     .Project-container {
-        width: var(--size-large);
+        width: var(--size-small);
         margin: 2rem 0;
         flex-direction: column;
         gap: 1rem;
