@@ -19,7 +19,7 @@ function Skill() {
 
   return (
         <div className="skill-content flex">
-          <div className="skill-graphic flex">
+          <div className="flex">
             <div className="skill-container flex">
               {skills &&
                 skills.map((skill, index) => (

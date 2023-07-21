@@ -1,6 +1,17 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+.slider-container h1{
+  width: var(--size-full);
+  text-align: center;
+  background: var(--linear-color-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
 .slider-container{
     width: var(--size-full);
     margin: 1rem auto;

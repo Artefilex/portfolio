@@ -23,7 +23,7 @@ function Card() {
   
 
   return <div className="Project-container flex">
-    <h1> My Websites</h1>
+    <h1> Websites</h1>
  {projects.map((project) => (
         <div className="project-info flex" key={project.id}>
           <div className="project-header flex">

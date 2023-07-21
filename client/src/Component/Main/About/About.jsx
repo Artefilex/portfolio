@@ -11,7 +11,7 @@ function About() {
     <AboutSelf/>
     <Certicate/>
     <Card/>
-  
+   
   </div>;
 }
 

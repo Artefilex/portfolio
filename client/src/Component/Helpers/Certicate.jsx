@@ -45,6 +45,7 @@ function Certicate() {
 
   return (
     <div className="slider-container">
+      <h1>Certificate</h1>
       <Slider {...settings}>
         {certificates.map((c, i) => (
           <div key={i} className={i === imageIndex ? "slide activeSlide" : "slide"}>

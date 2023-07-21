@@ -49,7 +49,7 @@ p {
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: var(--size-large);
+  max-width: 30rem;
 }
  .skillcard-container .skillcard-context ul li {
   flex-direction: column;
@@ -204,8 +204,6 @@ p {
   .skill-content {
     width: var(--size-small);
   }
-  .skill-graphic{
-    justify-content: flex-start;
-  }
+  
 }
 
