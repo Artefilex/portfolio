@@ -10,7 +10,7 @@ footer img{
   width: var(--size-full);
   flex-direction: column;
   align-items: center;
-  height: 20rem;
+  min-height: 20rem;
   background: var(--linear-color-6);
   margin-bottom: 5rem;
   box-shadow: var(--button-box-shadow);
@@ -21,7 +21,7 @@ footer img{
   color: var(--card-light);
   text-align: center;
 }
-.footercard form {
+.footercard .footer-sendmail {
     position: "relative";
     flex-direction: column;
 }
@@ -89,6 +89,9 @@ h4 {
   }
   .footercard form input {
     width: var(--size-medium);
+  }
+  .footercard form button {
+    left: 32%;
   }
 }
 @media screen and (min-width: 600px) {

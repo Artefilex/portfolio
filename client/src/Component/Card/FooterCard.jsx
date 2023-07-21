@@ -25,7 +25,7 @@ function FooterCard() {
   return <div className="flex footercard">
     <BsSend className="footer-icon"/>
      <h1>Subscribe to Stay Updated!</h1>
-     <form  className="flex" >
+     <form  className="flex footer-sendmail" >
      <input onChange={handleChange} type="mail" name="mail" id="mail"  value={userMail}  />
      <button type="submit" className="btn-subscribe"  onClick={handleSubmit}> <VscSend className="footer-send-icon"/></button>
      </form>

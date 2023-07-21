@@ -1,0 +1,85 @@
+.Contact {
+  width: var(--size-full);
+  flex-direction: column;
+  align-items: center;
+  min-height: 20rem;
+  background: var(--linear-color-6);
+  margin-bottom: 5rem;
+  box-shadow: var(--button-box-shadow);
+  justify-content: space-evenly;
+  padding: var(--display-6);
+}
+.Contact h2 {
+  width: var(--size-full);
+  color: var(--card-light);
+  text-align: start;
+}
+
+.Contact .form-container {
+  flex-direction: column;
+}
+.Contact .form-container .contact-form {
+  flex-direction: column;
+  position: none;
+}
+.Contact .form-container .contact-form input {
+  width: var(--size-full);
+  border: var(--border-white);
+  outline: none;
+  background: transparent;
+  padding: var(--display-9);
+}
+.Contact .form-container .contact-form input,
+.Contact .form-container .contact-form textarea {
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
+
+.Contact .form-container .contact-form input::placeholder,
+.Contact .form-container .contact-form textarea::placeholder {
+  color: var(--white-bg);
+}
+
+.contact-form textarea {
+  background: transparent;
+  padding: var(--display-9);
+  border: var(--border-white);
+  outline: none;
+  color: var(--white-bg);
+  width: var(--size-full);
+  resize: none;
+}
+
+
+.btn-send{
+    position: relative;
+    top: 0;
+    width: var(--size-full);
+    padding: var(--display-9);
+    border:  var(--white-button-border);
+    outline: none;
+    background: transparent;
+    border-radius: 16px;
+}
+.btn-send span{
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.1s top  ease-in-out;
+    color: var(--white-bg);
+}
+
+.btn-send:active{
+    top: 0.2rem;
+   
+}
+
+
+@media screen and (min-width:900px ) {
+    .Contact {
+        width: var(--size-large);
+        flex-direction: row;
+        padding: 2rem 1rem;
+      
+      }
+}

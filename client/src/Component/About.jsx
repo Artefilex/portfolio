@@ -4,6 +4,8 @@ import Card from "./Card/Card";
 import AboutSelf from "./Helpers/AboutSelf";
 import Certicate from "./Helpers/Certicate";
 import Skill from "./Skills/Skill"
+import Footer from "./Helpers/Footer"
+import FooterContact from "./Card/FooterContact";
 function About() {
   return <div className="About flex">
     <Header/>
@@ -11,7 +13,8 @@ function About() {
     <AboutSelf/>
     <Certicate/>
     <Card/>
-   
+    <FooterContact/>
+    <Footer/>
   </div>;
 }
 
