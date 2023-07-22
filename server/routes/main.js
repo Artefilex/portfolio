@@ -1,11 +1,33 @@
 const app = require("express");
+const sendmail = require("../helper/mailsend")
 const Skill = require("../models/skill");
 const Portfolio = require("../models/portfolio");
+const Subscribe = require("../models/subscribe");
+const config = require("../config");
 const router = app.Router();
 
 router.post("/", async (req,res) =>{
   const mail = req.body.email
-  console.log(mail)
+  try{
+     const subscribe = await Subscribe.create({
+      email: mail
+    });
+    const messagesendto = `Welcome my blog dear , ${mail}`
+    const option ={
+       from: config.email.to,
+       to: mail,
+       subject: messagesendto,
+       html: "congratulations you have subscribed"
+    } 
+    sendmail(option,(info) =>{
+      console.log("Email sent successfully");
+      console.log("MESSAGE ID: ", info.messageId);
+  })
+    res.send(subscribe)
+  }
+  catch(err){
+    console.log(err)
+  }
 } )
 
 router.get("/skills", async (req, res) => {

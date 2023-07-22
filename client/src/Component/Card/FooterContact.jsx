@@ -21,7 +21,12 @@ function FooterContact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    fetch("http://localhost:4000/about",{
+      method: "POST",
+      headers: {"Content-Type": "application/Json"},
+      body: JSON.stringify({form: form})}).then(() =>{
+        console.log("new mail ")
+      })
     setForm({
       fullname: "",
       email: "",

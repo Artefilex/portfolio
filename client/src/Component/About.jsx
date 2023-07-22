@@ -14,7 +14,6 @@ function About() {
     <Certicate/>
     <Card/>
     <FooterContact/>
-    <Footer/>
   </div>;
 }
 
