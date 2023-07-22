@@ -5,7 +5,7 @@ import Blogs from "../../Blog/Blogs";
 import Project from "../../Blog/Project";
 import CreateBlog from "../../Blog/CreateBlog";
 import Home from "../../Home";
-
+import AdminLogin from "../../Helpers/AdminLogin"
 function Location() {
   return (
     <Routes>
@@ -14,6 +14,7 @@ function Location() {
       <Route path="/blogs" Component={Blogs} />
       <Route path="/project" Component={Project} />
       <Route path="/project/createblog" Component={CreateBlog} />
+      <Route path="/admin" Component={AdminLogin} />
     </Routes>
   );
 }

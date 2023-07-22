@@ -13,7 +13,7 @@ function FooterCard() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userMail);
-    fetch("http://localhost:4000/",{
+    fetch(`${process.env.REACT_APP_HOST_URL}/`,{
       method: "POST",
       headers: {"Content-Type": "application/Json"},
       body: JSON.stringify({ email: userMail })

@@ -21,7 +21,7 @@ function FooterContact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/about",{
+    fetch(`${process.env.REACT_APP_HOST_URL}/about`,{
       method: "POST",
       headers: {"Content-Type": "application/Json"},
       body: JSON.stringify({form: form})}).then(() =>{

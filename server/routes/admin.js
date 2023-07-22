@@ -1,15 +1,15 @@
 const express = require("express")
-const config = require("../config")
 const router = express.Router()
-
+const dotenv = require("dotenv")
+dotenv.config({path: "./config.env"})
 
 
 router.post("/",async(req ,res) =>{
     const admin = req.body.form
     console.log(admin)
     try{
-        const admindb = config.admin
-        if(admin.name == admindb.username && admin.password == admindb.password){
+      
+        if(admin.name == process.env.ADMIN_NAME && admin.password == process.env.ADMIN_PASSWORD){
             console.log("welcome")
         } else{
             console.log("fuck offf");

@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSkills } from "../../Reducer/skillreducer";
-import { useLocation } from "react-router-dom";
+
 import "../../assests/css/skill.css";
 import SkillCard from "../Card/SkillCard";
 function Skill() {
   const { skills, loading } = useSelector((state) => state.skills);
-  const location = useLocation();
+  
   const dispatch = useDispatch();
-  console.log((location.pathname = "/"));
+ 
   useEffect(() => {
     dispatch(fetchSkills());
   }, [dispatch]);
