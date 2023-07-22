@@ -1,12 +1,15 @@
-const config = require("../config") 
-const Sequelize = require("sequelize") 
 
+const dotenv = require("dotenv")
+
+dotenv.config({path: "./config.env"})
+const Sequelize = require("sequelize") 
+// const config = require("config")
 const sequelize = new Sequelize(
-    config.db.database,
-    config.db.user,
-    config.db.password,{
+  process.env.DB_DATABASE,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,{
         dialect: "mysql",
-        host: config.db.host,
+        host: process.env.DB_HOST,
         define:{
             timestamp:false
         }
