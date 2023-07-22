@@ -50,13 +50,18 @@ p {
 }
 .Project-container .project-iframe{
   border-radius: 2%;
-  overflow: hidden;
+  overflow: hidden ;
   box-shadow: va(--button-box-shadow);
+  
 }
 
 .Project-container .project-iframe iframe{
   border: none;
+ 
 }
+
+
+
 @media screen and (min-width: 1200px) {
     .Project-container {
         width: var(--size-small);

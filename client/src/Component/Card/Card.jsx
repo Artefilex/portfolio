@@ -1,11 +1,10 @@
-import {useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../../assests/css/card.css"
+import "../../assests/css/card.css";
 function Card() {
-  
-  const [projects, setProject] = useState([])
+  const [projects, setProject] = useState([]);
 
-  useEffect( () =>{
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:4000/project");
@@ -18,26 +17,37 @@ function Card() {
         console.error("Error fetching data:", error);
       }
     };
-     fetchData()
-    },[])
-  
+    fetchData();
+  }, []);
 
-  return <div className="Project-container flex">
-    <h1> Websites</h1>
- {projects.map((project) => (
+  return (
+    <div className="Project-container flex">
+      <h1> Websites</h1>
+      {projects.map((project) => (
         <div className="project-info flex" key={project.id}>
           <div className="project-header flex">
-          <h2>{project.header}</h2>
-            <div className="scrollable" ><p >{project.content}</p></div>
-            <Link className="btn-project" to={`${project.projecturl}`}>  <span>Go to Project</span> </Link>
+            <h2>{project.header}</h2>
+            <div className="scrollable">
+              <p>{project.content}</p>
+            </div>
+            <Link className="btn-project" to={`${project.projecturl}`}>
+              {" "}
+              <span>Go to Project</span>{" "}
+            </Link>
           </div>
-        <div className="project-iframe flex" >
-          <iframe title={project.id} src={`${project.projecturl}`}  width="100%" height="400"></iframe>
-      
-        </div>
+          <div className="project-iframe flex">
+            <iframe
+              title={project.id}
+              src={`${project.projecturl}`}
+              width="100%"
+              height="400"
+             
+            ></iframe>
+          </div>
         </div>
       ))}
-  </div>;
+    </div>
+  );
 }
 
 export default Card;
