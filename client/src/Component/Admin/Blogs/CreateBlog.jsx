@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 function CreateBlog() {
+
   const [value, setValue] = useState("");
   const modules = {
     toolbar: [

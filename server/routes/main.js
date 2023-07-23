@@ -4,6 +4,7 @@ const Skill = require("../models/skill");
 const Portfolio = require("../models/portfolio");
 const Subscribe = require("../models/subscribe");
 const config = require("../config");
+const Blog = require("../models/blog")
 const router = app.Router();
 
 router.post("/", async (req,res) =>{
@@ -41,7 +42,10 @@ router.get("/project", async(req, res) =>{
   res.json(project)
 })
 
-
+router.get("/blogs" , async ( req ,res) =>{
+ const blogs = await Blog.findAll()
+ res.json(blogs)
+} )
 
 router.get("/", async(req, res) =>{
 

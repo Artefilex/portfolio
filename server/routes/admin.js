@@ -3,7 +3,7 @@ const router = express.Router()
 const dotenv = require("dotenv")
 dotenv.config({path: "./config.env"})
 const isAdmin = require("../middleware/isAdmin")
-
+const Blog = require("../models/blog")
 router.post("/",async(req ,res) =>{
     const admin = req.body.form
    
@@ -22,4 +22,9 @@ router.post("/",async(req ,res) =>{
         console.log(err);
     }
 })
+
+
+
+
+
  module.exports = router
