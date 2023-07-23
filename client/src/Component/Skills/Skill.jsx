@@ -6,8 +6,8 @@ import "../../assests/css/skill.css";
 import SkillCard from "../Card/SkillCard";
 function Skill() {
   const { skills, loading } = useSelector((state) => state.skills);
-  
   const dispatch = useDispatch();
+  
  
   useEffect(() => {
     dispatch(fetchSkills());

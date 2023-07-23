@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate  } from "react-router-dom"
+import Cookies from "universal-cookie";
 
 function AdminLogin() {
+
  const [form , setForm] = useState({
     name: "",
     password: ""
  })
+ const navigate = useNavigate()
   const handleChange = (e) =>{
     const {name, value} = e.target
    setForm((prevForm)=>({
@@ -12,20 +16,30 @@ function AdminLogin() {
     [name]:value
    }))
   }
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-     fetch( `${process.env.REACT_APP_HOST_URL}/admin` ,{
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const cookies = new Cookies()
+    try {
+      const response = await fetch(`${process.env.REACT_APP_HOST_URL}/admin`, {
         method: "POST",
-        headers: {"Content-Type": "application/Json"},
-        body: JSON.stringify({form: form})
-     })
+        headers: { "Content-Type": "application/Json" },
+        body: JSON.stringify({ form: form })
+      });
+
+      if (response.ok) {
+         cookies.set("isAdmin", true, {path: "/"} )
+      } 
+    } catch (err) {
+      console.log("Fetch işlemi sırasında bir hata oluştu: ", err);
+    }
+
     setForm({
-        name:"",
-        password:""
-    })
-  }
+      name: "",
+      password: ""
+    });
 
-
+    navigate("/");
+  };
   return <div className="login">
     <form action="" className="flex" onSubmit={handleSubmit}>
         <input type="text"  name="name" onChange={handleChange} value={form.name} />

@@ -7,7 +7,7 @@ import Footer from "./Helpers/Footer";
 import SkillCard from "./Card/SkillCard";
 
 function Home() {
- 
+  
   return (
     <div className="main flex">
       <Header/>
