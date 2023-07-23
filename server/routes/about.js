@@ -1,5 +1,5 @@
 const app = require("express")
-const mailsend = require("../helper/mailsend");
+const mailsend = require("../helpers/mailsend");
 const config = require("../config");
 
 const router = app.Router();

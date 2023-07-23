@@ -1,5 +1,5 @@
 const app = require("express");
-const sendmail = require("../helper/mailsend")
+const sendmail = require("../helpers/mailsend")
 const Skill = require("../models/skill");
 const Portfolio = require("../models/portfolio");
 const Subscribe = require("../models/subscribe");
@@ -39,6 +39,13 @@ router.get("/skills", async (req, res) => {
 router.get("/project", async(req, res) =>{
   const project = await Portfolio.findAll()
   res.json(project)
+})
+
+
+
+router.get("/", async(req, res) =>{
+
+  res.json(req.session.isAdmin)
 })
 
 module.exports = router;

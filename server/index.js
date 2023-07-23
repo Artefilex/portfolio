@@ -2,8 +2,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-
-
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv")
 
 dotenv.config({path: "./config.env"})
@@ -19,10 +19,6 @@ const about = require("./routes/about");
 const admin = require("./routes/admin");
 // Add CORS middleware to the Express application with specific options.
 const cors = require("cors");
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(
   cors({
     origin: "*",
@@ -30,10 +26,23 @@ app.use(
   })
 );
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cookieParser());
+app.use(
+  session({
+    name : "isAdmin",
+    secret: process.env.SECRETKEY,
+    saveUninitialized:true,
+    cookie: {maxAge:1000*60*60*24},
+    resave: false 
+  })
+)
+
 app.use("/", main);
 app.use("/about", about);
 app.use("/admin", admin);
-
 app.use("/libs", express.static(path.join(__dirname, "node_modules")));
 
 async function sync() {
