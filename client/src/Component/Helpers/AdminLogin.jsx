@@ -18,7 +18,7 @@ function AdminLogin() {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const cookies = new Cookies()
+    
     try {
       const response = await fetch(`${process.env.REACT_APP_HOST_URL}/admin`, {
         method: "POST",
@@ -27,7 +27,8 @@ function AdminLogin() {
       });
 
       if (response.ok) {
-         cookies.set("isAdmin", true, {path: "/"} )
+        const cookies = await new Cookies()
+        cookies.set("isAdmin", true, {path: "/"} )
       } 
     } catch (err) {
       console.log("Fetch işlemi sırasında bir hata oluştu: ", err);
