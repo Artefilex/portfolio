@@ -10,7 +10,7 @@ dotenv.config({ path: "./config.env" });
 router.post("/blogs/create", adminController.blog_create)
 
 // delete
-router.all("/blogs/delete/:blogid",adminController.blog_delete);
+router.post("/blogs/delete/:BlogUrl",adminController.blog_delete);
 
 // edit
 router.all("/blogs/:blogid",adminController.blog_edit)

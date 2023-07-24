@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
+import { handleChange, onEditorChange } from "./formUtils";
 function CreateBlog() {
   const [form, setForm] = useState({
     header: "",
@@ -23,19 +23,7 @@ function CreateBlog() {
       ["link", "image", "video"],
     ],
   };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
-  };
-  const onEditorChange = (value) => {
-    setForm((prevForm) => ({
-      ...prevForm,
-      content: value,
-    }));
-  };
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +51,7 @@ function CreateBlog() {
         name="header"
         type="text"
         value={form.header}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e, form, setForm)}
         placeholder="Header"
       />
 
@@ -71,7 +59,7 @@ function CreateBlog() {
         name="content"
         theme="snow"
         value={form.content}
-        onChange={onEditorChange}
+        onChange={(value) => onEditorChange(value, form, setForm)}
         modules={modules}
       />
       <button type="submit" className="btn btn-send" disabled={!form}></button>

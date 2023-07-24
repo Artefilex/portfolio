@@ -67,21 +67,25 @@ exports.blog_edit = async (req, res,next) => {
  }
 };
 
-exports.blog_delete = async (req, res,next) => {
-  if (req.method === "POST") {
+exports.blog_delete = async (req, res) => {
+ 
     try {
-      const blogid = req.body.blogid;
-      const blog = await Blog.findByPk(blogid);
+      const deleteBlog = req.body.deleteUrl;
+   
+      const blog = await Blog.findOne({
+        where: {
+         blogUrl: deleteBlog
+        }
+      });
       if (blog) {
         await blog.destroy();
-        next()
+     
       }
     
     } catch (err) {
       console.log(err);
     }
-  }
-};
+  };
 
 
 exports.admin_login =async (req, res) => {

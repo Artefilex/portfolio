@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import { useNavigate  } from "react-router-dom"
+import { handleChange, onEditorChange } from "./formUtils";
 function BlogDetails() {
 const navigate = useNavigate()
   const [form, setForm] = useState({ header: "", content: "" });
@@ -33,19 +34,7 @@ const navigate = useNavigate()
       .then((data) => setForm(data));
   }, [lastPart]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-  const editorChange = (value) => {
-    setForm((prevForm) => ({
-      ...prevForm,
-      content: value,
-    }));
-  };
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +54,7 @@ const navigate = useNavigate()
         name="header"
         type="text"
         value={form.header}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e, form, setForm)}
         placeholder="Header"
       />
 
@@ -73,7 +62,7 @@ const navigate = useNavigate()
         name="content"
         theme="snow"
         value={form.content}
-        onChange={editorChange}
+        onChange={(value) => onEditorChange(value, form, setForm)}
         modules={modules}
       />
       <button type="submit" className="btn btn-send" disabled={!form}></button>
