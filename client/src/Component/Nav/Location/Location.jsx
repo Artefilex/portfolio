@@ -6,14 +6,17 @@ import BlogContainer from "../../Admin/Blogs/BlogContainer";
 import Home from "../../Home";
 import AdminLogin from "../../Helpers/AdminLogin"
 import Cookies from "universal-cookie";
+import BlogDetails from "../../Admin/Blogs/BlogDetails";
 function Location() {
   const cookies = new Cookies()
 
   if(cookies.get("isAdmin")){
     return <Routes>
       <Route path="/" exact Component={Home} />
+      <Route path="/admin/blogs/:id" Component={BlogDetails} />
       <Route path="/admin/blogs" Component={BlogContainer} />
       <Route path="/admin" Component={AdminLogin} />
+     
     </Routes>
   }
 

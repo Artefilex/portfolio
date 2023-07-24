@@ -19,5 +19,5 @@ router.all("/blogs/:blogid",adminController.blog_edit)
 
 router.post("/login",adminController.admin_login)
 
-
+router.all("/blogs", adminController.blog_list);
  module.exports = router

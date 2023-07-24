@@ -2,6 +2,16 @@ const Blog = require("../models/blog");
 
 const slugField = require("../middleware/slugify");
 
+exports.blog_list =  async (req, res ) => {
+  try {
+   const blogs = await Blog.findAll()
+    res.json(blogs)
+  } catch (err) {
+    console.log(err);
+  }
+
+};
+
 exports.blog_create = async (req, res, next) => {
     const form = req.body.form;
     try {
@@ -18,18 +28,53 @@ exports.blog_create = async (req, res, next) => {
   
 };
 
-exports.blog_edit = async (req, res) => {};
+exports.blog_edit = async (req, res,next) => {
+ if(req.method === "GET"){
+  const blogid = req.params.blogid
+  try{
+    const blog = await Blog.findOne({
+      where : {
+        blogUrl: blogid
+      }
+    })   
+    if(blog){
+      res.json(blog)
+    }
+  }
+  catch(err){
+    console.log(err)
+  }
+ }
+ else if(req.method ==="POST"){
+  const blogid = req.body.blogid
+  const header = req.body.header;
+  const content = req.body.content;
+  try{
+    const blog = await Blog.findOne({ where : { id: blogid }})
+    if(blog){
+      blog.header = header,
+      blog.content = content,
+      blog.url = slugField(header)
+    }   
+    await blog.save()
 
-exports.blog_delete = async (req, res) => {
+  }
+  catch(err){
+    console.log(err)
+  }
+ }
+};
+
+exports.blog_delete = async (req, res,next) => {
   if (req.method === "POST") {
     try {
       const blogid = req.body.blogid;
       const blog = await Blog.findByPk(blogid);
       if (blog) {
         await blog.destroy();
-        res.redirect("/admin/blogs");
+        next()
       }
-      res.redirect("/admin/blogs/");
+    
     } catch (err) {
       console.log(err);
     }

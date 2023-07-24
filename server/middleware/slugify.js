@@ -3,7 +3,7 @@ const slugify = require("slugify")
 const options =  {
     replacement: '-',  
     remove: undefined,
-    lower: false,      
+    lower: true,      
     strict: false,    
     locale: 'tr', 
     trim: true        
