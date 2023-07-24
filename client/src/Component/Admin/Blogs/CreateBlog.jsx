@@ -39,11 +39,18 @@ function CreateBlog() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/create`,{
-    method: "POST",
-    headers: {"Content-Type": "application/Json"},
-    body: JSON.stringify({form:form})
-  })
+    fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/create`, {
+      method: "POST",
+      headers: { "Content-Type": "application/Json" },
+      body: JSON.stringify({ form: form }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("request success", data);
+      })
+      .catch((error) => {
+        console.error("Error creating blog:", error);
+      });
     setForm({
       header: "",
       content: "",
@@ -52,21 +59,21 @@ function CreateBlog() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-      name="header"
-      type="text" 
-      value={form.header} 
-      onChange={handleChange}
-      placeholder="Header"
-       />
-      <textarea name="content" id="content" value={form.value} onChange={handleChange} cols="30" rows="10"></textarea>
-      {/* <ReactQuill
+      <input
+        name="header"
+        type="text"
+        value={form.header}
+        onChange={handleChange}
+        placeholder="Header"
+      />
+
+      <ReactQuill
         name="content"
         theme="snow"
         value={form.content}
         onChange={onEditorChange}
         modules={modules}
-      /> */}
+      />
       <button type="submit" className="btn btn-send" disabled={!form}></button>
     </form>
   );
