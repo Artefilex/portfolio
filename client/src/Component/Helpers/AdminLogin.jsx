@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate  } from "react-router-dom"
-import Cookies from "universal-cookie";
+ import Cookies from "universal-cookie";
 
 function AdminLogin() {
 
@@ -20,12 +20,11 @@ function AdminLogin() {
     e.preventDefault();
     
     try {
-      const response = await fetch(`${process.env.REACT_APP_HOST_URL}/admin`, {
+     const response = await fetch(`${process.env.REACT_APP_HOST_URL}/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/Json" },
         body: JSON.stringify({ form: form })
       });
-
       if (response.ok) {
         const cookies = await new Cookies()
         cookies.set("isAdmin", true, {path: "/"} )

@@ -6,7 +6,7 @@ const router = app.Router();
 
 router.post("/" , async (req ,res ) =>{
     const form = req.body.form
-    console.log(form.email)
+    
     try{
         const messagesendto = ` ${form.email},feedback`;
         const option ={

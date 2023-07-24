@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Route, Routes } from "react-router-dom";
 import About from "../../About";
 import Blogs from "../../Blog/Blogs";

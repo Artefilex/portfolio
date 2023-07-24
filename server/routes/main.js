@@ -48,8 +48,8 @@ router.get("/blogs" , async ( req ,res) =>{
 } )
 
 router.get("/", async(req, res) =>{
-
-  res.json(req.session.isAdmin)
+  
+  res.send(req.session.isAdmin)
 })
 
 module.exports = router;
