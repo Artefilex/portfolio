@@ -46,15 +46,17 @@ exports.blog_edit = async (req, res,next) => {
   }
  }
  else if(req.method ==="POST"){
-  const blogid = req.body.blogid
-  const header = req.body.header;
-  const content = req.body.content;
+  const blogid = req.body.form.id
+  const form = req.body.form 
+
+
+  console.log(form)
   try{
     const blog = await Blog.findOne({ where : { id: blogid }})
     if(blog){
-      blog.header = header,
-      blog.content = content,
-      blog.url = slugField(header)
+      blog.header = form.header,
+      blog.content = form.content,
+      blog.blogUrl = slugField(form.header)
     }   
     await blog.save()
 

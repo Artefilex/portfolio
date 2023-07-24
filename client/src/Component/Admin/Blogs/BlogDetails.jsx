@@ -1,26 +1,83 @@
 import React, { useEffect, useState } from "react";
-
-
+import ReactQuill from "react-quill";
+import { useNavigate  } from "react-router-dom"
 function BlogDetails() {
-const [form , setForm] = useState([])
- const url = window.location.href
- const urlParts = url.split("/");
- const lastPart = urlParts.pop();
-  
-useEffect(() => {
-    fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`,{
-        method:"GET",
-        headers:  { "Content-Type": "application/Json" }
-      })
-      .then((res) => res.json()) 
-      .then((data) =>setForm(data) )
+const navigate = useNavigate()
+  const [form, setForm] = useState({ header: "", content: "" });
+
+  const url = window.location.href;
+  const urlParts = url.split("/");
+  const lastPart = urlParts.pop();
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: [] }],
+      [{ size: [] }],
+      ["bold", "italic", "underline", "strike", "blockqoute"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image", "video"],
+    ],
+  };
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/Json" },
+    })
+      .then((res) => res.json())
+      .then((data) => setForm(data));
   }, [lastPart]);
-  
- console.log(form)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  const editorChange = (value) => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      content: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/Json" },
+      body: JSON.stringify({ form: form }),
+    });
+    setForm(form);
+   navigate("/admin/blogs")
+
+  };
+
   return (
-    <div>
-   
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        name="header"
+        type="text"
+        value={form.header}
+        onChange={handleChange}
+        placeholder="Header"
+      />
+
+      <ReactQuill
+        name="content"
+        theme="snow"
+        value={form.content}
+        onChange={editorChange}
+        modules={modules}
+      />
+      <button type="submit" className="btn btn-send" disabled={!form}></button>
+    </form>
   );
 }
 
