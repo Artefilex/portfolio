@@ -6,18 +6,11 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
 // BLOG
-// create
+
 router.post("/blogs/create", adminController.blog_create)
-
-
-// delete
 router.post("/blogs/delete/:BlogUrl",adminController.blog_delete);
-
-// edit
 router.all("/blogs/:blogid",adminController.blog_edit)
-
 router.post("/login",adminController.admin_login)
-
 router.all("/blogs", adminController.blog_list);
 
 // ADMİN PANEL

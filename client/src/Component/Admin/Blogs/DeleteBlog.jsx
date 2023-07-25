@@ -1,21 +1,16 @@
 import React from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-function DeleteBlog({  url }) {
+function DeleteBlog({  url , onSuccess}) {
   const deleteUrl = url
 
-  const handleClick = () => {
-    fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/delete/${deleteUrl}`, {
+  const handleClick = async () => {
+   await  fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/delete/${deleteUrl}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ deleteUrl}),
-    }).then((response) => {    
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      body: JSON.stringify({deleteUrl :  deleteUrl}),
     })
-    .catch((error) => {
-      console.error("Error deleting blog:", error);
-    });
+
+    onSuccess()
   };
 
   return (

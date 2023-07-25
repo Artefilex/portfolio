@@ -13,7 +13,7 @@ exports.blog_list = async (req, res) => {
   }
 };
 
-exports.blog_create = async (req, res, next) => {
+exports.blog_create = async (req, res, ) => {
   const form = req.body.form;
   try {
     console.log(form);
@@ -22,7 +22,7 @@ exports.blog_create = async (req, res, next) => {
       content: form.content,
       blogUrl: slugField(form.header),
     });
-    next();
+    res.send(`${form} success`)
   } catch (err) {
     console.log(err);
   }

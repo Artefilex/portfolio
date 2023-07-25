@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { handleChange, onEditorChange } from "../formUtils";
-function CreateBlog() {
+function CreateBlog({onSuccess}) {
+
   const [form, setForm] = useState({
     header: "",
     content: "",
@@ -25,9 +26,9 @@ function CreateBlog() {
   };
  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/create`, {
+   await fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/create`, {
       method: "POST",
       headers: { "Content-Type": "application/Json" },
       body: JSON.stringify({ form: form }),
@@ -43,6 +44,7 @@ function CreateBlog() {
       header: "",
       content: "",
     });
+    onSuccess()
   };
 
   return (
