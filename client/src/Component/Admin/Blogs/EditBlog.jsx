@@ -12,6 +12,7 @@ function EditBlog() {
   .then((data) => setBlog(data))
    },[])
   return <div>
+    <h1>Edit / Delete Blog</h1>
    {
     blogs.map((item) =>(
      <div key={item.id}>

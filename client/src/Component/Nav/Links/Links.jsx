@@ -15,8 +15,8 @@ function Links() {
  return <>
   <li> <Link to="/">Home</Link></li>
   <li> <Link to="/admin/blogs"> Blogs Management</Link></li>
-  <li> <Link to="/dashbord">Dasbord</Link></li>
-  <li> <Link to="/logout" onClick={handleLogout}>logout</Link></li>
+  <li> <Link to="/admin/panel">Admin Panel</Link></li>
+  <li> <Link to="/logout" onClick={handleLogout}>Logout</Link></li>
   </>;
   }
   return <>

@@ -10,9 +10,16 @@ const router = app.Router();
 router.post("/", async (req,res) =>{
   const mail = req.body.email
   try{
-     const subscribe = await Subscribe.create({
+    const subscribe = await Subscribe.findOne({ where: { email: mail } });
+    if(subscribe){
+      return "Girdiğiniz email adresine ait bir kayıt bulunmaktadır"
+    }
+ 
+     const createSubscribe = await Subscribe.create({
       email: mail
     });
+
+   
     const messagesendto = `Welcome my blog dear , ${mail}`
     const option ={
        from: config.email.to,
@@ -23,7 +30,8 @@ router.post("/", async (req,res) =>{
     sendmail(option,(info) =>{
       console.log("Email sent successfully");
       console.log("MESSAGE ID: ", info.messageId);
-  })
+  }) 
+   createSubscribe.save()
     res.send(subscribe)
   }
   catch(err){

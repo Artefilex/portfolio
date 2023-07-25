@@ -7,7 +7,8 @@ import Home from "../../Home";
 import AdminLogin from "../../Helpers/AdminLogin"
 import Cookies from "universal-cookie";
 import BlogDetails from "../../Admin/Blogs/BlogDetails";
-// import DeleteBlog from "../../Admin/Blogs/DeleteBlog";
+import AdminPanel from "../../Admin/Panel/AdminPanel";
+
 function Location() {
   const cookies = new Cookies()
 
@@ -17,7 +18,7 @@ function Location() {
       <Route path="/admin/blogs/:id" Component={BlogDetails} />
       <Route path="/admin/blogs" Component={BlogContainer} />
       <Route path="/admin" Component={AdminLogin} />
-      {/* <Route path="/admin/blogs/:delete" Component={DeleteBlog} /> */}
+      <Route path="/admin/panel" Component={AdminPanel} />
     </Routes>
   }
 

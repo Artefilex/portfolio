@@ -46,6 +46,8 @@ function CreateBlog() {
   };
 
   return (
+    <div>
+      <h1>Create New Blog</h1>
     <form onSubmit={handleSubmit}>
       <input
         name="header"
@@ -62,8 +64,9 @@ function CreateBlog() {
         onChange={(value) => onEditorChange(value, form, setForm)}
         modules={modules}
       />
-      <button type="submit" className="btn btn-send" disabled={!form}></button>
+      <button type="submit" className="btn btn-send" disabled={!form}> Send Blog </button>
     </form>
+    </div>
   );
 }
 

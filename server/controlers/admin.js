@@ -1,6 +1,9 @@
 const Blog = require("../models/blog");
-
 const slugField = require("../middleware/slugify");
+const Skill = require("../models/skill")
+const Subscribe = require("../models/subscribe");
+const Portfolio = require("../models/portfolio");
+
 
 exports.blog_list =  async (req, res ) => {
   try {
@@ -106,4 +109,41 @@ exports.admin_login =async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+}
+exports.panel_list = async (req, res) =>{
+  
+  try{
+  const skill = await  Skill.findAll()
+  const subscribe = await Subscribe.findAll()
+  const portfoly =  await Portfolio.findAll() 
+  const data = {
+   skills: skill,
+   subscribes: subscribe,
+   portfolys: portfoly,
+ };
+  console.log(data)
+ 
+   res.json(data)
+  }catch(err){
+   console.log();
+  }
+ }
+
+
+
+exports.skill_edit = async (req, res) =>{
+ }
+exports.skill_create = async (req, res) =>{
+ }
+exports.skill_remove = async (req, res) =>{
+}
+
+
+exports.portfoly_edit = async (req, res) =>{
+ 
+}
+exports.portfoly_create = async (req, res) =>{
+}
+exports.portfoly_remove = async (req, res) =>{
+ 
 }
