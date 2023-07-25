@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
+import SkillCreate from "./skill/SkillCreate";
+import PortfolyCreate from "./portfoly/PortfolyCreate";
 
 function AdminPanel() {
   const [panel, setPanel] = useState({
@@ -23,7 +25,9 @@ function AdminPanel() {
 
   console.log(panel.portfolys);
   return (
+   <>
     <div>
+    <h2> Your Skill</h2>
       {panel.skills.map((item) => (
         <div key={item.id}>
           {" "}
@@ -35,15 +39,28 @@ function AdminPanel() {
           </Link>{" "}
         </div>
       ))}
+      <div>
+        <h2> Add Skill</h2>
+       <SkillCreate/>
+      </div>
+   </div>
+    <div>
+    <h2> Your Project</h2>
       {panel.portfolys.map((item) => (
         <Link to={`/admin/panel/portfoly/${item.id}`}>
           <div key={item.id}>
-            <h2>{item.header}</h2>
+            <h4>{item.header}</h4>
             <p> {item.content}</p>
           </div>
         </Link>
       ))}
+      <div>
+        <h2> Add Project</h2>
+       <PortfolyCreate/>
+      </div>
     </div>
+   
+   </>
   );
 }
 

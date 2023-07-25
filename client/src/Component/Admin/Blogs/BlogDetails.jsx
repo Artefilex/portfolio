@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import { useNavigate  } from "react-router-dom"
-import { handleChange, onEditorChange } from "./formUtils";
+import { handleChange, onEditorChange } from "../formUtils";
 function BlogDetails() {
 const navigate = useNavigate()
   const [form, setForm] = useState({ header: "", content: "" });

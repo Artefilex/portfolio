@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { handleChange } from "../../Blogs/formUtils";
+import { handleChange } from "../../formUtils";
 function EditSkill() {
   const id = window.location.href.split("/").pop();
   const navigate = useNavigate();

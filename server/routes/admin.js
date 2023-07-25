@@ -22,18 +22,18 @@ router.post("/login",adminController.admin_login)
 
 router.all("/blogs", adminController.blog_list);
 
-// Panel 
+// ADMİN PANEL
 
-// router.post("/panel/portfoly/delete/:portid", adminController.portfoly_remove)
 
-// router.post("/panel/portfoly/create", adminController.portfoly_create)
+router.post("/panel/portfoly/delete/:portid", adminController.portfoly_remove)
+router.post("/panel/portfoly/create", adminController.portfoly_create)
+router.all("/panel/portfoly/:portid", adminController.portfoly_edit)
 
-// router.post("/panel/skill/delete/:skillid", adminController.skill_remove)
- router.all("/panel/skill/:skillid", adminController.skill_edit)
-
+router.post("/panel/skill/delete/:skillid", adminController.skill_remove)
+router.all("/panel/skill/:skillid", adminController.skill_edit)
 router.post("/panel/skill/create", adminController.skill_create)
 
-router.all("/panel/portfoly/:portid", adminController.portfoly_edit)
+
 router.get("/panel", adminController.panel_list)
 
 module.exports = router

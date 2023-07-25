@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { handleChange, onEditorChange } from "./formUtils";
+import { handleChange, onEditorChange } from "../formUtils";
 function CreateBlog() {
   const [form, setForm] = useState({
     header: "",

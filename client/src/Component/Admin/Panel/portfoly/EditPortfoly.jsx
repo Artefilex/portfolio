@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { handleChange } from "../../Blogs/formUtils";
+import { handleChange } from "../../formUtils";
 import { useNavigate } from "react-router-dom";
 function EditPortfoly() {
  const navigate = useNavigate()
