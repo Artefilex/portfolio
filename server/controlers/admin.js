@@ -164,15 +164,17 @@ exports.skill_create = async (req, res, next) => {
   }
 };
 exports.skill_remove = async (req, res) => {
-  const deleteSkill = req.body.skillname;
+  const deleteSkill = req.body.id;
+ 
   try {
     const skill = await Skill.findOne({
       where: {
-        skillName: deleteSkill,
+        id: deleteSkill,
       },
     });
     if (skill) {
       await skill.destroy();
+      res.send(`${deleteSkill} delete success `)
     }
   } catch (err) {
     console.log(err);
@@ -239,6 +241,8 @@ exports.portfoly_remove = async (req, res) => {
     });
     if (portfoly) {
       await portfoly.destroy();
+      res.send(`${deleteportfoly} deleting success `)
+      
     }
   } catch (err) {
     console.log(err);

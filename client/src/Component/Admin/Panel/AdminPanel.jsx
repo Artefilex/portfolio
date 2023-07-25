@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SkillCreate from "./skill/SkillCreate";
 import PortfolyCreate from "./portfoly/PortfolyCreate";
-
+import DeleteSkill from "./skill/DeleteSkill"
+import DeletePortfoly from "./portfoly/DeletePortfoly";
 
 function AdminPanel() {
   const [panel, setPanel] = useState({
@@ -37,13 +38,13 @@ function AdminPanel() {
     <h2> Your Skill</h2>
       {panel.skills.map((item) => (
         <div key={item.id}>
-          {" "}
           <Link to={`/admin/panel/skill/${item.id}`}>
-            {" "}
             <span>
               {item.skillName} {item.skillLevel}
-            </span>{" "}
-          </Link>{" "}
+            </span>
+
+          </Link>
+          <DeleteSkill  onSuccess={handlePostSuccess} id={item.id} />
         </div>
       ))}
       <div>
@@ -54,12 +55,16 @@ function AdminPanel() {
     <div>
     <h2> Your Project</h2>
       {panel.portfolys.map((item) => (
-        <Link to={`/admin/panel/portfoly/${item.id}`}>
+       <div key={item.id}>
+         <Link to={`/admin/panel/portfoly/${item.id}`}>
           <div key={item.id}>
             <h4>{item.header}</h4>
             <p> {item.content}</p>
           </div>
+         
         </Link>
+        <DeletePortfoly onSuccess={handlePostSuccess} id={item.id}/>
+       </div>
       ))}
       <div>
         <h2> Add Project</h2>

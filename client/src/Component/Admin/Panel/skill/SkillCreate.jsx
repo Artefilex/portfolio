@@ -8,12 +8,16 @@ function SkillCreate({onSuccess}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = {
+      skillName: form.skillName.toUpperCase(),
+      skillLevel: form.skillLevel,
+    };
     const response = await fetch(
       `${process.env.REACT_APP_HOST_URL}/admin/panel/skill/create`,
       {
         method: "POST",
         headers: {"Content-Type": "application/Json"},
-        body: JSON.stringify({ form: form }),
+        body: JSON.stringify({ form: formData }),
       }
     );
     if (response.ok) {
