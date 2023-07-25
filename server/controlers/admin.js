@@ -1,97 +1,84 @@
 const Blog = require("../models/blog");
 const slugField = require("../middleware/slugify");
-const Skill = require("../models/skill")
+const Skill = require("../models/skill");
 const Subscribe = require("../models/subscribe");
 const Portfolio = require("../models/portfolio");
 
-
-exports.blog_list =  async (req, res ) => {
+exports.blog_list = async (req, res) => {
   try {
-   const blogs = await Blog.findAll()
-    res.json(blogs)
+    const blogs = await Blog.findAll();
+    res.json(blogs);
   } catch (err) {
     console.log(err);
   }
-
 };
 
 exports.blog_create = async (req, res, next) => {
-    const form = req.body.form;
+  const form = req.body.form;
+  try {
+    console.log(form);
+    await Blog.create({
+      header: form.header,
+      content: form.content,
+      blogUrl: slugField(form.header),
+    });
+    next();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+exports.blog_edit = async (req, res) => {
+  if (req.method === "GET") {
+    const blogid = req.params.blogid;
     try {
-      console.log(form)
-      await Blog.create({
-        header:  form.header,
-        content: form.content,
-        blogUrl: slugField(form.header),
+      const blog = await Blog.findOne({
+        where: {
+          blogUrl: blogid,
+        },
       });
-      next();
+      if (blog) {
+        res.json(blog);
+      }
     } catch (err) {
       console.log(err);
     }
-  
-};
-
-exports.blog_edit = async (req, res,next) => {
- if(req.method === "GET"){
-  const blogid = req.params.blogid
-  try{
-    const blog = await Blog.findOne({
-      where : {
-        blogUrl: blogid
+  } else if (req.method === "POST") {
+    const blogid = req.body.form.id;
+    const form = req.body.form;
+    console.log(form);
+    try {
+      const blog = await Blog.findOne({ where: { id: blogid } });
+      if (blog) {
+        (blog.header = form.header),
+          (blog.content = form.content),
+          (blog.blogUrl = slugField(form.header));
       }
-    })   
-    if(blog){
-      res.json(blog)
+      await blog.save();
+    } catch (err) {
+      console.log(err);
     }
   }
-  catch(err){
-    console.log(err)
-  }
- }
- else if(req.method ==="POST"){
-  const blogid = req.body.form.id
-  const form = req.body.form 
-
-
-  console.log(form)
-  try{
-    const blog = await Blog.findOne({ where : { id: blogid }})
-    if(blog){
-      blog.header = form.header,
-      blog.content = form.content,
-      blog.blogUrl = slugField(form.header)
-    }   
-    await blog.save()
-
-  }
-  catch(err){
-    console.log(err)
-  }
- }
 };
 
 exports.blog_delete = async (req, res) => {
- 
-    try {
-      const deleteBlog = req.body.deleteUrl;
-   
-      const blog = await Blog.findOne({
-        where: {
-         blogUrl: deleteBlog
-        }
-      });
-      if (blog) {
-        await blog.destroy();
-     
-      }
-    
-    } catch (err) {
-      console.log(err);
+  try {
+    const deleteBlog = req.body.deleteUrl;
+
+    const blog = await Blog.findOne({
+      where: {
+        blogUrl: deleteBlog,
+      },
+    });
+    if (blog) {
+      await blog.destroy();
     }
-  };
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-
-exports.admin_login =async (req, res) => {
+exports.admin_login = async (req, res) => {
   const admin = req.body.form;
   console.log(admin);
   try {
@@ -109,27 +96,23 @@ exports.admin_login =async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-}
-exports.panel_list = async (req, res) =>{
-  
-  try{
-  const skill = await  Skill.findAll()
-  const subscribe = await Subscribe.findAll()
-  const portfoly =  await Portfolio.findAll() 
-  const data = {
-   skills: skill,
-   subscribes: subscribe,
-   portfolys: portfoly,
- };
-  console.log(data)
- 
-   res.json(data)
-  }catch(err){
-   console.log();
+};
+exports.panel_list = async (req, res) => {
+  try {
+    const skill = await Skill.findAll();
+    const subscribe = await Subscribe.findAll();
+    const portfoly = await Portfolio.findAll();
+    const data = {
+      skills: skill,
+      subscribes: subscribe,
+      portfolys: portfoly,
+    };
+
+    res.json(data);
+  } catch (err) {
+    console.log();
   }
- }
-
-
+};
 
 // exports.skill_edit = async (req, res) =>{
 //  }
@@ -138,12 +121,45 @@ exports.panel_list = async (req, res) =>{
 // exports.skill_remove = async (req, res) =>{
 // }
 
-
-// exports.portfoly_edit = async (req, res) =>{
- 
-// }
+exports.portfoly_edit = async (req, res,next) => {
+  if (req.method === "GET") {
+    const portid = req.params.portid;
+    try {
+      const portfoly = await Portfolio.findOne({
+        where: {
+          id: portid,
+        },
+      });
+      if (portfoly) {
+        res.json(portfoly);
+        next()
+      } 
+    } catch (err) {
+      console.log(err);
+    }
+  } else if (req.method === "POST") {
+    const form = req.body.form;
+   
+     try{
+       const portfolio = await Portfolio.findOne({
+        where:{
+          id: form.id
+        }
+       })
+       if(portfolio){
+         portfolio.header = form.header
+         portfolio.content = form.content
+         portfolio.projecturl = form.projecturl
+       }
+       portfolio.save()
+     }
+     catch(err){
+       console.log(err);
+     }
+  }
+};
 // exports.portfoly_create = async (req, res) =>{
 // }
 // exports.portfoly_remove = async (req, res) =>{
- 
+
 // }

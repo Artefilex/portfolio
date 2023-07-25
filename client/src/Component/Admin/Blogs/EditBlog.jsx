@@ -6,7 +6,7 @@ function EditBlog() {
   useEffect(()=>{
   fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs`,{
     method:"GET",
-    headers:  { "Content-Type": "application/Json" }
+    headers:  { "Content-Type": "application/Json"}
   })
   .then((res) => res.json()) 
   .then((data) => setBlog(data))

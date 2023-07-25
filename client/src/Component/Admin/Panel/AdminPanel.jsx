@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 function AdminPanel() {
  const [panel ,setPanel] = useState({
     skills: [],
@@ -8,7 +10,8 @@ function AdminPanel() {
   useEffect(() => {
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/panel`, {
       method: "GET",
-      headers: { "Content-Type": "application/Json" },
+      headers: {"Content-Type": "application/Json"},
+      
     })
       .then((res) => res.json())
       .then((data) => {
@@ -25,14 +28,15 @@ function AdminPanel() {
     {
    panel.skills.map((item) => ( 
     <div key={item.id}> {item.skillName} {item.skillLevel}  </div>
+    
    ))
     }
     {
  panel.portfolys.map((item) => ( 
-    <div key={item.id}> {item.header} 
-    
-     <iframe title={item.header} width={600} height={400} src={item.projecturl} frameborder="0"></iframe>
-    </div>
+   <Link to={`/admin/panel/portfoly/${item.id}`} >  <div key={item.id}> {item.header} 
+   <iframe title={item.header} width={600} height={400} src={item.projecturl} frameborder="0"></iframe>
+  </div>
+  </Link>
    ))
     }
   </div>;
