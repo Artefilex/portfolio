@@ -131,19 +131,19 @@ exports.panel_list = async (req, res) =>{
 
 
 
-exports.skill_edit = async (req, res) =>{
- }
-exports.skill_create = async (req, res) =>{
- }
-exports.skill_remove = async (req, res) =>{
-}
+// exports.skill_edit = async (req, res) =>{
+//  }
+// exports.skill_create = async (req, res) =>{
+//  }
+// exports.skill_remove = async (req, res) =>{
+// }
 
 
-exports.portfoly_edit = async (req, res) =>{
+// exports.portfoly_edit = async (req, res) =>{
  
-}
-exports.portfoly_create = async (req, res) =>{
-}
-exports.portfoly_remove = async (req, res) =>{
+// }
+// exports.portfoly_create = async (req, res) =>{
+// }
+// exports.portfoly_remove = async (req, res) =>{
  
-}
+// }
