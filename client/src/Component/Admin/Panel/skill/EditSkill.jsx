@@ -41,13 +41,18 @@ function EditSkill() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+     <div>
+      <h2>Skill</h2>
+     <input
         type="text"
         name="skillName"
         value={form.skillName}
         onChange={(e) => handleChange(e, form, setForm)}
       />
-      <input
+     </div>
+      <div>
+        <h2>Average</h2>
+        <input
         type="number"
         max={100}
         min={0}
@@ -55,6 +60,7 @@ function EditSkill() {
         value={form.skillLevel}
         onChange={(e) => handleChange(e, form, setForm)}
       />
+      </div>
       <button type="submit">Submit</button>
     </form>
   );

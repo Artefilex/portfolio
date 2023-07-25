@@ -73,6 +73,7 @@ exports.blog_delete = async (req, res) => {
     if (blog) {
       await blog.destroy();
     }
+    res.send("delete success")
   } catch (err) {
     console.log(err);
   }
@@ -152,10 +153,36 @@ exports.skill_edit = async (req, res, next) =>{
     }
   }
  }
-// exports.skill_create = async (req, res) =>{
-//  }
-// exports.skill_remove = async (req, res) =>{
-// }
+exports.skill_create = async (req, res, next) =>{
+  const form = req.body.form
+  try{
+     await Skill.create({
+    skillName : form.skillName,
+    skillLevel : form.skillLevel
+   })
+   res.send("skill Create")
+   next()
+   
+  }
+  catch(err){
+    console.log(err)
+  }
+ }
+exports.skill_remove = async (req, res) =>{
+  const deleteSkill = req.body.skillname;
+  try{
+    const skill = await Skill.findOne({
+      where: {
+        skillName: deleteSkill,
+      },
+    });
+    if (skill) {
+      await skill.destroy();
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 exports.portfoly_edit = async (req, res,next) => {
   if (req.method === "GET") {
@@ -194,8 +221,34 @@ exports.portfoly_edit = async (req, res,next) => {
      }
   }
 };
-// exports.portfoly_create = async (req, res) =>{
-// }
-// exports.portfoly_remove = async (req, res) =>{
-
-// }
+exports.portfoly_create = async (req, res) =>{
+  const form = req.body.form
+  try{
+   await Portfolio.create({
+    header : form.header,
+    content  : form.content,
+    projecturl: form.projecturl
+   })
+   res.send("portfolio Create")
+   next()
+   
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+exports.portfoly_remove = async (req, res) =>{
+  const deleteportfoly = req.body.id;
+  try{
+    const portfoly = await Portfolio.findOne({
+      where: {
+        id: deleteportfoly
+      },
+    });
+    if (portfoly) {
+      await portfoly.destroy();
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}

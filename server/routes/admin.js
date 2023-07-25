@@ -30,7 +30,9 @@ router.all("/blogs", adminController.blog_list);
 
 // router.post("/panel/skill/delete/:skillid", adminController.skill_remove)
  router.all("/panel/skill/:skillid", adminController.skill_edit)
-// router.post("/panel/skill/create", adminController.skill_create)
+
+router.post("/panel/skill/create", adminController.skill_create)
+
 router.all("/panel/portfoly/:portid", adminController.portfoly_edit)
 router.get("/panel", adminController.panel_list)
 
