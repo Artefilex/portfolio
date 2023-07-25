@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import SkillCreate from "./skill/SkillCreate";
 import PortfolyCreate from "./portfoly/PortfolyCreate";
 
+
 function AdminPanel() {
   const [panel, setPanel] = useState({
     skills: [],
     portfolys: [],
   });
-  useEffect(() => {
+
+  const fetchPanelData = () =>{
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/panel`, {
       method: "GET",
       headers: { "Content-Type": "application/Json" },
@@ -21,9 +23,14 @@ function AdminPanel() {
           portfolys: data.portfolys,
         });
       });
+  }
+  useEffect(() => {
+    fetchPanelData()
   }, []);
+  const handlePostSuccess = () => {
+    fetchPanelData();
+  };
 
-  console.log(panel.portfolys);
   return (
    <>
     <div>
@@ -41,7 +48,7 @@ function AdminPanel() {
       ))}
       <div>
         <h2> Add Skill</h2>
-       <SkillCreate/>
+       <SkillCreate onSuccess={handlePostSuccess} />
       </div>
    </div>
     <div>
@@ -56,7 +63,7 @@ function AdminPanel() {
       ))}
       <div>
         <h2> Add Project</h2>
-       <PortfolyCreate/>
+       <PortfolyCreate onSuccess={handlePostSuccess} />
       </div>
     </div>
    

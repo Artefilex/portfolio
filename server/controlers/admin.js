@@ -151,6 +151,7 @@ exports.skill_edit = async (req, res, next) => {
 };
 exports.skill_create = async (req, res, next) => {
   const form = req.body.form;
+  console.log(form)
   try {
     await Skill.create({
       skillName: form.skillName,

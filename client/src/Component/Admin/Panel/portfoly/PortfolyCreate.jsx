@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { handleChange } from "../../formUtils";
-function PortfolyCreate() {
+function PortfolyCreate({ onSuccess}) {
   
     const [form, setForm] = useState({
         header : "",
@@ -22,6 +22,7 @@ function PortfolyCreate() {
             projecturl: "",
         })
       }
+      onSuccess()
       
     }
   
