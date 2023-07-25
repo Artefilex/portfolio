@@ -9,7 +9,7 @@ import Cookies from "universal-cookie";
 import BlogDetails from "../../Admin/Blogs/BlogDetails";
 import AdminPanel from "../../Admin/Panel/AdminPanel";
 import EditPortfoly from "../../Admin/Panel/portfoly/EditPortfoly";
-
+import EditSkill from "../../Admin/Panel/skill/EditSkill";
 function Location() {
   const cookies = new Cookies()
 
@@ -21,6 +21,7 @@ function Location() {
       <Route path="/admin" Component={AdminLogin} />
       <Route path="/admin/panel" Component={AdminPanel} />
       <Route path="/admin/panel/portfoly/:id" Component={EditPortfoly} />
+      <Route path="/admin/panel/skill/:id" Component={EditSkill} />
     </Routes>
   }
 

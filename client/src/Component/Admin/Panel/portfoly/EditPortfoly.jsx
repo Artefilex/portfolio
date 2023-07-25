@@ -29,7 +29,7 @@ function EditPortfoly() {
   
       if (response.ok) {
         console.log("POST işlemi başarılı!");
-        navigate("/admin/panel/"); // İsteğin başarılı olması durumunda sayfayı yönlendirin
+        navigate("/admin/panel/"); 
       } else {
         console.error("POST işlemi başarısız!");
       }

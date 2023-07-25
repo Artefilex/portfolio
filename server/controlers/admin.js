@@ -114,8 +114,44 @@ exports.panel_list = async (req, res) => {
   }
 };
 
-// exports.skill_edit = async (req, res) =>{
-//  }
+exports.skill_edit = async (req, res, next) =>{
+  if(req.method=== "GET"){
+    const skillid = req.params.skillid
+    try{
+      const skill = await Skill.findOne({
+        where:{
+          id: skillid
+        }
+       
+      })
+      if(skill){
+        res.json(skill)
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+  else if(req.method=== "POST"){
+    const form = req.body.form
+    try{ 
+     const skill = await Skill.findOne({
+      where: {
+        id: form.id
+      }
+     })
+   if(skill){
+    skill.skillName = form.skillName,
+    skill.skillLevel = form.skillLevel
+   }
+   skill.save()
+  next()
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+ }
 // exports.skill_create = async (req, res) =>{
 //  }
 // exports.skill_remove = async (req, res) =>{
