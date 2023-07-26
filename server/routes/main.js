@@ -41,7 +41,6 @@ router.post("/", async (req,res) =>{
 
 router.get("/skills", async (req, res) => {
   const skills = await Skill.findAll();
-
   res.json(skills);
 });
 
@@ -49,6 +48,19 @@ router.get("/project", async(req, res) =>{
   const project = await Portfolio.findAll()
   res.json(project)
 })
+router.get("/blogs/:id" , async ( req ,res) =>{
+  const blogid =req.params.id
+  console.log(blogid)
+  const blogs = await Blog.findOne({
+    where:{
+      blogUrl: blogid
+    }
+  })
+  if(blogs){
+    res.json(blogs)
+  }
+  
+ } )
 
 router.get("/blogs" , async ( req ,res) =>{
  const blogs = await Blog.findAll()

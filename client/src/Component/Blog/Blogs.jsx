@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-
+import {Link} from "react-router-dom"
 function Blogs() {
   const [blogs, setBlogs] = useState([]);
   
@@ -15,11 +15,14 @@ function Blogs() {
 
   return <div >
      {
-      blogs.map((blog) =>(<div key={blog.id}>
-       <h1>{blog.header} </h1>
+      blogs.map((blog) =>(
+        <div key={blog.id}>
+        <Link to={`/blogs/${blog.blogUrl}`}>
+        <h1>{blog.header} </h1>
         <div dangerouslySetInnerHTML={{ __html: blog.content }}>     
-        </div>
-      </div>  
+         </div>
+       </Link>
+       </div> 
       ))
      }
   </div>;

@@ -10,6 +10,7 @@ import BlogDetails from "../../Admin/Blogs/BlogDetails";
 import AdminPanel from "../../Admin/Panel/AdminPanel";
 import EditPortfoly from "../../Admin/Panel/portfoly/EditPortfoly";
 import EditSkill from "../../Admin/Panel/skill/EditSkill";
+import BlogsDetail from "../../Blog/BlogsDetail";
 function Location() {
   const cookies = new Cookies()
 
@@ -30,6 +31,7 @@ function Location() {
       <Route path="/" exact Component={Home} />
       <Route path="/about" Component={About} />
       <Route path="/blogs" Component={Blogs} />
+      <Route path="/blogs/:id" Component={BlogsDetail}/>
       <Route path="/admin" Component={AdminLogin} /> 
     </Routes>
   );
