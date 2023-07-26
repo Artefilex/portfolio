@@ -20,7 +20,7 @@ function BlogContainer() {
   };
 
 
-  return <div className="flex">
+  return <div className="Blog-Container flex">
     <CreateBlog  onSuccess={handlePostSuccess} />
     <EditBlog  blogs={blogs}  onSuccess={handlePostSuccess} />
   </div>;

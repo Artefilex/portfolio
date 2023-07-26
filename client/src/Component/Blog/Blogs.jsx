@@ -19,8 +19,7 @@ function Blogs() {
         <div key={blog.id}>
         <Link to={`/blogs/${blog.blogUrl}`}>
         <h1>{blog.header} </h1>
-        <div dangerouslySetInnerHTML={{ __html: blog.content }}>     
-         </div>
+        <p> {blog.subtitle}</p>
        </Link>
        </div> 
       ))

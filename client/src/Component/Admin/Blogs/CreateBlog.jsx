@@ -6,6 +6,7 @@ function CreateBlog({onSuccess}) {
 
   const [form, setForm] = useState({
     header: "",
+    subtitle:"",
     content: "",
   });
 
@@ -42,15 +43,19 @@ function CreateBlog({onSuccess}) {
       });
     setForm({
       header: "",
+      subtitle:"",
       content: "",
+      
     });
     onSuccess()
   };
 
   return (
-    <div>
+    <div className="form-card">
       <h1>Create New Blog</h1>
     <form onSubmit={handleSubmit}>
+     <div>
+      <h4>Header</h4>
       <input
         name="header"
         type="text"
@@ -58,7 +63,19 @@ function CreateBlog({onSuccess}) {
         onChange={(e) => handleChange(e, form, setForm)}
         placeholder="Header"
       />
+     </div>
 
+     <div className="form-card">
+      <h4>Sub Title</h4>
+      <input
+        name="subtitle"
+        type="text"
+        value={form.subtitle}
+        onChange={(e) => handleChange(e, form, setForm)}
+        placeholder="Header"
+      />
+     </div>
+     <div className="form-content">
       <ReactQuill
         name="content"
         theme="snow"
@@ -66,7 +83,10 @@ function CreateBlog({onSuccess}) {
         onChange={(value) => onEditorChange(value, form, setForm)}
         modules={modules}
       />
+      </div>
+      <div className="form-card">
       <button type="submit" className="btn btn-send" disabled={!form}> Send Blog </button>
+      </div>
     </form>
     </div>
   );

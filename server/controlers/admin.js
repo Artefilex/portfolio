@@ -18,6 +18,7 @@ exports.blog_create = async (req, res, ) => {
   try {
     await Blog.create({
       header: form.header,
+      subtitle: form.subtitle,
       content: form.content,
       blogUrl: slugField(form.header),
     });
@@ -49,9 +50,10 @@ exports.blog_edit = async (req, res) => {
     try {
       const blog = await Blog.findOne({ where: { id: form.id } });
       if (blog) {
-        (blog.header = form.header),
-          (blog.content = form.content),
-          (blog.blogUrl = slugField(form.header));
+        blog.header = form.header,
+        blog.content = form.content,
+        blog.subtitle = form.subtitle,
+        blog.blogUrl = slugField(form.header);
       }
       await blog.save();
       res.send(`${blogid} blog edit`)

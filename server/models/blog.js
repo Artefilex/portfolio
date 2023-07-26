@@ -8,6 +8,10 @@ const Blog = sequelize.define(
             type: DataTypes.STRING,
             allowNull:false
         },
+        subtitle: {
+            type: DataTypes.TEXT,
+            allowNull:false
+        },
         content: {
             type: DataTypes.TEXT,
             allowNull:false

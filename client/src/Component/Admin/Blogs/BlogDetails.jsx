@@ -4,7 +4,7 @@ import { useNavigate  } from "react-router-dom"
 import { handleChange, onEditorChange } from "../formUtils";
 function BlogDetails() {
 const navigate = useNavigate()
-  const [form, setForm] = useState({ header: "", content: "" });
+  const [form, setForm] = useState({ header: "",subtitle:"", content: "" });
 
   const url = window.location.href;
   const urlParts = url.split("/");
@@ -49,6 +49,8 @@ const navigate = useNavigate()
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className="form-card">
+        <h4>Header </h4>
       <input
         name="header"
         type="text"
@@ -56,15 +58,29 @@ const navigate = useNavigate()
         onChange={(e) => handleChange(e, form, setForm)}
         placeholder="Header"
       />
-
-      <ReactQuill
+      </div>
+      <div className="form-card">
+      <h4>Sub Title</h4>
+      <input
+        name="subtitle"
+        type="text"
+        value={form.subtitle}
+        onChange={(e) => handleChange(e, form, setForm)}
+        placeholder="Header"
+      />
+     </div>
+     <div className="form-content">
+     <ReactQuill
         name="content"
         theme="snow"
         value={form.content}
         onChange={(value) => onEditorChange(value, form, setForm)}
         modules={modules}
       />
-      <button type="submit" className="btn btn-send" disabled={!form}></button>
+     </div>
+     <div className="form-card">
+      <button type="submit" className="btn btn-send" disabled={!form}>Edit Blog </button>
+      </div>
     </form>
   );
 }

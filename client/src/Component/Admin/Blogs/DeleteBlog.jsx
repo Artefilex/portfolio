@@ -14,8 +14,8 @@ function DeleteBlog({  url , onSuccess}) {
   };
 
   return (
-    <div>
-      <button onClick={handleClick}><AiOutlineDelete /></button>
+    <div className="delete-button">
+      <button className="delete-btn" onClick={handleClick}><AiOutlineDelete /></button>
     </div>
   );
 }

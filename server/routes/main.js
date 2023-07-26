@@ -6,7 +6,7 @@ const Subscribe = require("../models/subscribe");
 const config = require("../config");
 const Blog = require("../models/blog")
 const router = app.Router();
-
+const { Op } = require("sequelize");
 router.post("/", async (req,res) =>{
   const mail = req.body.email
   try{
@@ -50,19 +50,30 @@ router.get("/project", async(req, res) =>{
 })
 router.get("/blogs/:id" , async ( req ,res) =>{
   const blogid =req.params.id
-  console.log(blogid)
-  const blogs = await Blog.findOne({
+  const blogs = await Blog.findAll({
+    where:{
+      blogUrl:{
+        [Op.ne]: blogid
+      }
+    }
+  })
+  const blog = await Blog.findOne({
     where:{
       blogUrl: blogid
     }
   })
-  if(blogs){
-    res.json(blogs)
+  const data = {
+    blogs: blogs,
+    blog: blog,
+  }
+  if(blog){
+    res.json(data)
   }
   
  } )
 
 router.get("/blogs" , async ( req ,res) =>{
+
  const blogs = await Blog.findAll()
  res.json(blogs)
 } )
