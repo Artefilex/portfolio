@@ -43,7 +43,6 @@ const navigate = useNavigate()
       headers: { "Content-Type": "application/Json" },
       body: JSON.stringify({ form: form }),
     });
-    setForm(form);
    navigate("/admin/blogs")
 
   };

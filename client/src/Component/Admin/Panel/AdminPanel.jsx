@@ -42,7 +42,6 @@ function AdminPanel() {
             <span>
               {item.skillName} {item.skillLevel}
             </span>
-
           </Link>
           <DeleteSkill  onSuccess={handlePostSuccess} id={item.id} />
         </div>
