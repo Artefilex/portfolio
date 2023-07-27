@@ -13,11 +13,11 @@
     flex-direction: column;
 }
 .Admin-Panel .admin-container .admin-form,
-.Admin-Panel .admin-container .admin-skill{
+.Admin-Panel .admin-container .admin-card{
     gap: 0.5rem;
    
 }
-.Admin-Panel .admin-container .single-skill{
+.Admin-Panel .admin-container .single-card{
     justify-content: space-between;
     padding: var(--display-7);
     border-radius: 8px;
@@ -25,7 +25,11 @@
     border: var(--border-white2);
     flex-direction: column;
 }
-.Admin-Panel .admin-container .single-skill span{
+.Admin-Panel .admin-container .project{
+    align-items: flex-start;
+    min-height: 10rem;
+}
+.Admin-Panel .admin-container .single-card span{
   font-size: 1.2rem; 
   font-weight: 700;
   padding: var(--display-7);
@@ -53,7 +57,22 @@
   padding: var(--display-8);
   border-radius: 20px;
 }
-
+.Admin-Panel .admin-container .admin-form form textarea{
+    width: var(--size-full);
+    border: var(--border-white);
+    outline: none;
+    padding: var(--display-3);
+    border-radius: 20px;
+    overflow: autoewf;
+    resize: none;
+    font-size: 1rem;
+}
+.Admin-Panel .admin-container .admin-form .edit-form h2{
+    width: var(--size-full);
+}
+.Admin-Panel .admin-container .admin-form .edit-form textarea{
+    height: 20rem;
+}
 .Admin-Panel .admin-container .admin-form form button{
     border: none;
     width: var(--size-full);
@@ -68,7 +87,7 @@
     border-radius: 20px;
     transition: 0.4s top ease-in-out;
 }
-.Admin-Panel .admin-container .admin-skill button{
+.Admin-Panel .admin-container .admin-card button{
     background: var(--linear-button);
     width: var(--size-half);
     padding: var(--display-9);
@@ -79,28 +98,28 @@
     border: none;
     transition: transform 0.2s ;
 }
-.Admin-Panel .admin-container .admin-skill button:active{
+.Admin-Panel .admin-container .admin-card button:active{
     transform: scale(0.9);
 }
-.Admin-Panel .admin-container .admin-skill button svg{
+.Admin-Panel .admin-container .admin-card button svg{
   font-size: 1.4rem;
 }
 .Admin-Panel .admin-container .admin-form form button:active{
     top: 5px;
 }
 
-.Admin-Panel .admin-container .admin-skill,
+.Admin-Panel .admin-container .admin-card,
 .Admin-Panel .admin-container .admin-form{
     flex-direction: column;
 }
 
 @media screen and ( min-width: 400px ) {
-    .Admin-Panel .admin-container .admin-skill button{
+    .Admin-Panel .admin-container .admin-card button{
         padding: var(--display-5);
         border-radius:100% ;
         width: max-content;
     }
-  .Admin-Panel .admin-container .single-skill{
+  .Admin-Panel .admin-container .single-card{
     flex-direction: row;
   }
 }

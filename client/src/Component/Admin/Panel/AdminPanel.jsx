@@ -34,35 +34,16 @@ function AdminPanel() {
 
   return (
     <div className="Admin-Panel flex">
-      <div className="admin-container flex">
-     
-     
-        <div className="admin-skill flex">
-          <h2> Your Skill</h2>
-          {panel.skills.map((item) => (
-            <div className="single-skill flex" key={item.id}>
-              <Link to={`/admin/panel/skill/${item.id}`}>
-                <span>
-                  {item.skillName} {item.skillLevel}
-                </span>
-              </Link>
-              <DeleteSkill onSuccess={handlePostSuccess} id={item.id} />
-            </div>
-          ))}
-        </div>
-        <div className="admin-form flex">
-          <h2> Add Skill</h2>
-          <SkillCreate onSuccess={handlePostSuccess} />
-        </div>
-      </div>
+   
+
       <div className="admin-container flex">
        
-        <div>
+        <div className="admin-card flex">
           <h2> Your Project</h2>
           {panel.portfolys.map((item) => (
-            <div key={item.id}>
+            <div key={item.id}  className="single-card project flex">
               <Link to={`/admin/panel/portfoly/${item.id}`}>
-                <div key={item.id}>
+                <div  key={item.id}>
                   <h4>{item.header}</h4>
                   <p> {item.content}</p>
                 </div>
@@ -71,11 +52,31 @@ function AdminPanel() {
             </div>
           ))}
         </div>
-        <div>
+        <div className="admin-form flex">
           <h2> Add Project</h2>
           <PortfolyCreate onSuccess={handlePostSuccess} />
         </div>
       </div>
+      <div className="admin-container flex">
+     
+     <div className="admin-card flex">
+       <h2> Your Skill</h2>
+       {panel.skills.map((item) => (
+         <div className="single-card flex" key={item.id}>
+           <Link to={`/admin/panel/skill/${item.id}`}>
+             <span>
+               {item.skillName} {item.skillLevel}
+             </span>
+           </Link>
+           <DeleteSkill onSuccess={handlePostSuccess} id={item.id} />
+         </div>
+       ))}
+     </div>
+     <div className="admin-form flex">
+       <h2> Add Skill</h2>
+       <SkillCreate onSuccess={handlePostSuccess} />
+     </div>
+   </div>
     </div>
   );
 }

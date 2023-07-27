@@ -34,22 +34,20 @@ function PortfolyCreate({ onSuccess}) {
       
     }
   
-    return <form onSubmit={handleSubmit}>
-    <div>
+    return <form className="flex" onSubmit={handleSubmit}>
+    <div className="form-card flex">
         <h4> Header</h4>
         <input type="text" name="header" value={form.header} onChange={(e) => handleChange(e, form , setForm)} />
     </div>
-    <div>
+    <div className="form-card flex">
         <h4> Content</h4>
         <textarea name="content" id="" cols="30" rows="10" value={form.content} onChange={(e) => handleChange(e, form , setForm)}></textarea>
     </div>
-    <div>
+    <div className="form-card flex">
         <h4> Project Url</h4>
         <input type="text"  name="projecturl" value={form.projecturl} onChange={(e) => handleChange(e, form , setForm)}/>
     </div>
-    <div>
-       <button type="submit"> Submit </button>
-    </div>
+       <button type="submit" > Submit Project </button>
     </form>;
 }
 

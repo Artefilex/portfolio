@@ -10,9 +10,6 @@ function EditSkill() {
     skillLevel: "",
   });
 
-  
-    
-
   useEffect(() => {
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/panel/skill/${id}`, {
       method: "GET",
@@ -20,12 +17,11 @@ function EditSkill() {
     })
       .then((res) => res.json())
       .then((data) => setForm(data));
- 
   }, [id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const formData = {
       ...form,
       skillName: form.skillName.toUpperCase(),
@@ -44,32 +40,36 @@ function EditSkill() {
     }
   };
 
-
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <h2>Skill</h2>
-        <input
-          type="text"
-          name="skillName"
-          value={form.skillName}
-          onChange={(e) => handleChange(e, form, setForm)}
-        />
+    <div className="Admin-Panel">
+      <div className="admin-container">
+        <div className="admin-form">
+          <form className="flex  edit-form" onSubmit={handleSubmit}>
+            <div className="form-card flex">
+              <h2>Skill</h2>
+              <input
+                type="text"
+                name="skillName"
+                value={form.skillName}
+                onChange={(e) => handleChange(e, form, setForm)}
+              />
+            </div>
+            <div className="form-card flex">
+              <h2>Average</h2>
+              <input
+                type="number"
+                max={100}
+                min={0}
+                name="skillLevel"
+                value={form.skillLevel}
+                onChange={(e) => handleChange(e, form, setForm)}
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </div>
-      <div>
-        <h2>Average</h2>
-        <input
-          type="number"
-          max={100}
-          min={0}
-          name="skillLevel"
-          value={form.skillLevel}
-          onChange={(e) => handleChange(e, form, setForm)}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    </div>
   );
 }
 

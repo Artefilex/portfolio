@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../../../assests/css/admin.css"
 import { handleChange } from "../../formUtils";
 import { useNavigate } from "react-router-dom";
 function EditPortfoly() {
@@ -40,9 +41,12 @@ function EditPortfoly() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <h2>header</h2>
+  <div className="Admin-Panel">
+<div className="admin-container">
+     <div className="admin-form">
+     <form className="flex edit-form" onSubmit={handleSubmit}>
+      <div className="form-card flex">
+        <h2>Header</h2>
         <input
           type="text"
           name="header"
@@ -50,8 +54,8 @@ function EditPortfoly() {
           onChange={(e) => handleChange(e, form, setForm)}
         />
       </div>
-      <div>
-        <h2>content</h2>
+      <div className="form-card flex">
+        <h2>Content</h2>
         <textarea
           type="text"
           name="content"
@@ -59,7 +63,7 @@ function EditPortfoly() {
           onChange={(e) => handleChange(e, form, setForm)}
         />
       </div>
-      <div>
+      <div className="form-card flex">
         <h2> Url</h2>
         <input
           type="text"
@@ -68,10 +72,13 @@ function EditPortfoly() {
           onChange={(e) => handleChange(e, form, setForm)}
         />
       </div>
-      <div>
+
         <button type="submit"> Submit</button>
-      </div>
+  
     </form>
+   </div>
+  </div>
+  </div>
   );
 }
 

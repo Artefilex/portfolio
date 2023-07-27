@@ -52,7 +52,7 @@ function SkillCreate({onSuccess}) {
           onChange={(e) => handleChange(e, form, setForm)}
         />
       </div>
-        <button type="submit"> Submit </button>
+        <button type="submit"> Submit Skill </button>
     </form>
   );
 }
