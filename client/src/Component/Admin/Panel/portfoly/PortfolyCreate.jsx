@@ -7,13 +7,21 @@ function PortfolyCreate({ onSuccess}) {
         content  : "",
         projecturl: "",
     })
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+    const formData = {
+        header : capitalizeFirstLetter(form.header),
+        content  : form.content,
+        projecturl: form.projecturl,
+      };
 
     const handleSubmit = async (e)=>{
         e.preventDefault()
     const response = await fetch(`${process.env.REACT_APP_HOST_URL}/admin/panel/portfoly/create`,{
         method: "POST",
         headers: {"Content-Type": "application/Json"},
-        body: JSON.stringify({form:form})
+        body: JSON.stringify({form:formData})
       })
       if(response.ok){
         setForm({

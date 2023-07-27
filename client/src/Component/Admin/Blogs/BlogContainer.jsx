@@ -1,6 +1,7 @@
 import  {useState,useEffect} from "react";
 import CreateBlog from "./CreateBlog"
 import EditBlog from "./EditBlog"
+import "../../../assests/css/blog.css"
 function BlogContainer() {
   const [blogs,setBlog] = useState([]) 
   const  fetchPanelData = async () =>{

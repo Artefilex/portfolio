@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../Helpers/Loading";
+import FooterContact from "../Card/FooterContact";
+
 
 function BlogsDetail() {
   const baseUrl = window.location.origin;
@@ -17,17 +20,22 @@ function BlogsDetail() {
         setBlogs(data.blogs);
       });
   }, [url]);
+  if(!blog){
+    return <Loading/>
+  }
 
   return (
-    <div className="Blog-Details">
-      <div className="single-blog">
+    <div className="Blog flex">
+  
+    <div className="Blog-Details flex">
+      <div className="single-blog flex">
         <div className="single-blog-header">
-          <h1>{blog.header}</h1>
+          <h2>{blog.header}</h2>
           <p>{blog.subtitle}</p>
         </div>
         <div dangerouslySetInnerHTML={{ __html: blog.content }}></div>
       </div>
-      <div className="other-blog">
+      <div className="other-blog flex">
         {blogs.map((item) => (
           <div key={item.id} className="blog-link">
             <Link to={`${baseUrl}/blogs/${item.blogUrl}`}>
@@ -37,6 +45,10 @@ function BlogsDetail() {
           </div>
         ))}
       </div>
+    </div>  
+    
+    <FooterContact/>
+    
     </div>
   );
 }

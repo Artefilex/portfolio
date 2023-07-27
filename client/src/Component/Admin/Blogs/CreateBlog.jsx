@@ -3,7 +3,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { handleChange, onEditorChange } from "../formUtils";
 function CreateBlog({onSuccess}) {
-
+ 
   const [form, setForm] = useState({
     header: "",
     subtitle:"",
@@ -25,14 +25,21 @@ function CreateBlog({onSuccess}) {
       ["link", "image", "video"],
     ],
   };
- 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  const formData = {
+     header: form.header.toUpperCase(),
+     subtitle:  capitalizeFirstLetter(form.subtitle),
+     content: form.content
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
    await fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/create`, {
       method: "POST",
       headers: { "Content-Type": "application/Json" },
-      body: JSON.stringify({ form: form }),
+      body: JSON.stringify({ form: formData }),
     })
       .then((res) => res.json())
       .then((data) => {

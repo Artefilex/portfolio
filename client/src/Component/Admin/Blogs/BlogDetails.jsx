@@ -24,6 +24,14 @@ const navigate = useNavigate()
       ["link", "image", "video"],
     ],
   };
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  const formData = {
+     header: form.header.toUpperCase(),
+     subtitle:  capitalizeFirstLetter(form.subtitle),
+     content: form.content
+  };
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`, {
@@ -41,7 +49,7 @@ const navigate = useNavigate()
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`, {
       method: "POST",
       headers: { "Content-Type": "application/Json" },
-      body: JSON.stringify({ form: form }),
+      body: JSON.stringify({ form: formData }),
     });
    navigate("/admin/blogs")
 
