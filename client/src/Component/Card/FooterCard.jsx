@@ -1,7 +1,9 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import "../../assests/css/footer.css"
 import {BsSend} from "react-icons/bs"
 import {VscSend} from "react-icons/vsc"
+import Aos from "aos";
+import "aos/dist/aos.css";
 function FooterCard() {
   const [userMail , setUserMail] = useState("")
   const handleChange = (e) => {
@@ -9,7 +11,9 @@ function FooterCard() {
     setUserMail(value); 
    
   };
-
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userMail);
@@ -22,7 +26,9 @@ function FooterCard() {
      })
     setUserMail(""); 
   };
-  return <div className="flex footercard">
+  return <div className="flex footercard" data-aos="fade-up"
+  data-aos-offset="200"
+  data-aos-easing="ease-in-sine">
     <BsSend className="footer-icon"/>
      <h1>Subscribe to Stay Updated!</h1>
      <form  className="flex footer-sendmail" >

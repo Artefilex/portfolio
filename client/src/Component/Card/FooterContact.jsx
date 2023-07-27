@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../assests/css/contact.css";
 import { BsTelephone } from "react-icons/bs";
 import { RxTwitterLogo } from "react-icons/rx";
 import { CiLocationOn } from "react-icons/ci";
 import { FiMail } from "react-icons/fi";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 function FooterContact() {
   const [form, setForm] = useState({
     fullname: "",
     email: "",
     message: "",
   });
+  useEffect(() =>{
+    Aos.init({duration:2000})
+   },[])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +42,7 @@ function FooterContact() {
 
   return (
     <div className="Contact flex">
-      <div className="form-container flex">
+      <div className="form-container flex"  data-aos="fade-right" >
         <h2> Contact Me </h2>
         <div className="flex contact-form contact-icon ">
             <div className="flex contact-info">
@@ -63,7 +69,7 @@ function FooterContact() {
         
          </div>
       </div>
-      <div className="form-container flex">
+      <div className="form-container flex"  data-aos="fade-left">
         <form className="contact-form flex" onSubmit={handleSubmit}>
           <input
             type="text"
