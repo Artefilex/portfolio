@@ -7,7 +7,7 @@ import {  GiHamburgerMenu } from "react-icons/gi"
 import { GrClose} from "react-icons/gr"
 function Nav() {
   const [show , setShow] = useState(false)
-const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
 
   const handleClick = () =>{
     setShow(!show)
@@ -15,7 +15,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 500);
+      setIsMobile(window.innerWidth <= 630);
     };
 
     window.addEventListener("resize", handleResize);
@@ -30,7 +30,6 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
     <nav className="navbar flex">
       <div className="navbar-logo flex">
         <Link className="flex" to="/">
-        
           <img src={Logo} alt="" />
         </Link>
       </div>
@@ -38,7 +37,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
      
      <div className="navbar-links flex">
      {
-      <ul className={`${show ? 'active' : ''}`}> <Links /></ul> 
+      <ul className={`${show ? 'active' : ''}`}> <Links/></ul> 
       }
      </div>
      {isMobile && (<div className="navbar-btn flex">

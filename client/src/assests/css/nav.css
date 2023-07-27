@@ -50,6 +50,11 @@ nav {
 .navbar .navbar-item .navbar-links ul li {
   padding: var(--display-1);
 }
+
+.navbar .navbar-item .navbar-links ul li a {
+  white-space: nowrap;
+}
+
 .navbar .navbar-item .navbar-links ul li:hover {
   background: var(--linear-color-5);
   box-shadow: var(--navbar-box-shadow);
@@ -60,6 +65,7 @@ nav {
 .navbar .navbar-logo a {
   width: 6rem;
   align-items: center;
+ 
 }
 
 .navbar .navbar-logo a img {
@@ -69,7 +75,7 @@ nav {
 
 
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 630px) {
   .navbar .navbar-item .navbar-links ul {
     display: flex !important;
     flex-direction: row;
