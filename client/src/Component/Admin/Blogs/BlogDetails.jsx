@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
+import "../../../assests/css/blog.css"
 import { useNavigate  } from "react-router-dom"
 import { handleChange, onEditorChange } from "../formUtils";
 function BlogDetails() {
@@ -28,9 +29,10 @@ const navigate = useNavigate()
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   const formData = {
+    ...form,
      header: form.header.toUpperCase(),
      subtitle:  capitalizeFirstLetter(form.subtitle),
-     content: form.content
+  
   };
 
   useEffect(() => {
@@ -56,8 +58,11 @@ const navigate = useNavigate()
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-card">
+  <div className="Blog-Panel flex">
+   <div className="admin-container flex">
+   <div className="admin-form flex">
+     <form className="form-blog flex " onSubmit={handleSubmit}>
+      <div  className="form-card flex">
         <h4>Header </h4>
       <input
         name="header"
@@ -67,7 +72,7 @@ const navigate = useNavigate()
         placeholder="Header"
       />
       </div>
-      <div className="form-card">
+      <div className="form-card flex">
       <h4>Sub Title</h4>
       <input
         name="subtitle"
@@ -77,7 +82,7 @@ const navigate = useNavigate()
         placeholder="Header"
       />
      </div>
-     <div className="form-content">
+     <div className="form-card flex">
      <ReactQuill
         name="content"
         theme="snow"
@@ -86,10 +91,14 @@ const navigate = useNavigate()
         modules={modules}
       />
      </div>
-     <div className="form-card">
+     
       <button type="submit" className="btn btn-send" disabled={!form}>Edit Blog </button>
-      </div>
+     
     </form>
+
+   </div>
+   </div>
+  </div>
   );
 }
 

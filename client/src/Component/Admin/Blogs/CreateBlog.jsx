@@ -58,10 +58,11 @@ function CreateBlog({onSuccess}) {
   };
 
   return (
-    <div className="form-card">
+
+     <div className="admin-form flex">
       <h1>Create New Blog</h1>
-    <form onSubmit={handleSubmit}>
-     <div>
+    <form className="form-blog flex " onSubmit={handleSubmit}>
+     <div className="form-card flex">
       <h4>Header</h4>
       <input
         name="header"
@@ -72,7 +73,7 @@ function CreateBlog({onSuccess}) {
       />
      </div>
 
-     <div className="form-card">
+     <div className="form-card flex">
       <h4>Sub Title</h4>
       <input
         name="subtitle"
@@ -82,7 +83,7 @@ function CreateBlog({onSuccess}) {
         placeholder="Header"
       />
      </div>
-     <div className="form-content">
+     <div className="form-card flex">
       <ReactQuill
         name="content"
         theme="snow"
@@ -91,11 +92,11 @@ function CreateBlog({onSuccess}) {
         modules={modules}
       />
       </div>
-      <div className="form-card">
+  
       <button type="submit" className="btn btn-send" disabled={!form}> Send Blog </button>
-      </div>
     </form>
     </div>
+
   );
 }
 

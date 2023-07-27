@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-
+import "../../assests/css/admin.css"
 function AdminLogin() {
   const [form, setForm] = useState({
     name: "",
@@ -38,9 +38,11 @@ function AdminLogin() {
     navigate("/");
   };
   return (
-    <div className="login">
+    <div className="Admin-Panel Login-Panel flex">
+    <div className="admin-container login flex">
+      <div className="admin-form flex">
       <form action="" className="flex" onSubmit={handleSubmit}>
-        <div className="form-card">
+        <div className="form-card flex">
           <h4>User Name</h4>
           <input
             type="text"
@@ -49,7 +51,7 @@ function AdminLogin() {
             value={form.name}
           />
         </div>
-        <div className="form-card">
+        <div className="form-card flex">
           <h4>Password </h4>
           <input
             type="password"
@@ -58,11 +60,14 @@ function AdminLogin() {
             value={form.password}
           />
         </div>
-        <div className="form-card">
           <button type="submit"> Login</button>
-        </div>
       </form>
-    </div>
+      </div>
+     
+
+     </div>   
+   </div>
+  
   );
 }
 

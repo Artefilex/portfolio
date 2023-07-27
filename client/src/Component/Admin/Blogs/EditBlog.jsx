@@ -3,15 +3,15 @@ import {Link} from "react-router-dom"
 import DeleteBlog from "./DeleteBlog";
 function EditBlog({blogs , onSuccess}) {
  
-  return <div>
+  return <div className="admin-card flex">
     <h1>Edit / Delete Blog</h1>
    {
     blogs.map((item) =>(
-     <div key={item.id}>
+     <div className="single-card flex" key={item.id}>
         <Link to={`/admin/blogs/${item.blogUrl}`} >
-           {item.header}
+           <span>{item.header}</span>
         </Link>
-        <DeleteBlog onSuccess={onSuccess}  url={item.blogUrl} />  
+        <DeleteBlog onSuccess={onSuccess}  url={item.id} />  
      </div>
     ))
    }

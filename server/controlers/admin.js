@@ -44,9 +44,8 @@ exports.blog_edit = async (req, res) => {
       console.log(err);
     }
   } else if (req.method === "POST") {
-   
     const form = req.body.form;
-    console.log(form);
+   
     try {
       const blog = await Blog.findOne({ where: { id: form.id } });
       if (blog) {
@@ -56,7 +55,7 @@ exports.blog_edit = async (req, res) => {
         blog.blogUrl = slugField(form.header);
       }
       await blog.save();
-      res.send(`${blogid} blog edit`)
+      res.send(`${form.id} blog edit`)
     } catch (err) {
       console.log(err);
     }
@@ -69,7 +68,7 @@ exports.blog_delete = async (req, res) => {
 
     const blog = await Blog.findOne({
       where: {
-        blogUrl: deleteBlog,
+        id: deleteBlog,
       },
     });
     if (blog) {

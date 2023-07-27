@@ -35,7 +35,6 @@ function AdminPanel() {
   return (
     <div className="Admin-Panel flex">
    
-
       <div className="admin-container flex">
        
         <div className="admin-card flex">
