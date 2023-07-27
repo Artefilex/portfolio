@@ -1,0 +1,134 @@
+.Admin-Panel{
+ flex-direction: column;
+ justify-content: flex-start;
+ align-items: flex-start;
+ width: var(--size-full);
+ min-height: 95vh;
+}
+
+.Admin-Panel .admin-container{
+    width: var(--size-xxl);
+    margin: 1rem 0.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.Admin-Panel .admin-container .admin-form,
+.Admin-Panel .admin-container .admin-skill{
+    gap: 0.5rem;
+   
+}
+.Admin-Panel .admin-container .single-skill{
+    justify-content: space-between;
+    padding: var(--display-7);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-card);
+    border: var(--border-white2);
+    flex-direction: column;
+}
+.Admin-Panel .admin-container .single-skill span{
+  font-size: 1.2rem; 
+  font-weight: 700;
+  padding: var(--display-7);
+}
+
+.Admin-Panel .admin-container .admin-form form{
+    min-height: 20rem;
+    padding: var(--display-7);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-card);
+    border: var(--border-white2);
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Admin-Panel .admin-container .admin-form form .form-card{
+    flex-direction: column;
+
+}
+
+.Admin-Panel .admin-container .admin-form form input{
+  width: var(--size-full);
+  border: var(--border-white);
+  outline: none;
+  padding: var(--display-8);
+  border-radius: 20px;
+}
+
+.Admin-Panel .admin-container .admin-form form button{
+    border: none;
+    width: var(--size-full);
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    margin-top: 1rem;
+    background: var(--linear-button);
+    padding: var(--display-9);
+    color: var(--light-color);
+    border-radius: 20px;
+    transition: 0.4s top ease-in-out;
+}
+.Admin-Panel .admin-container .admin-skill button{
+    background: var(--linear-button);
+    width: var(--size-half);
+    padding: var(--display-9);
+    color: var(--light-color);
+    cursor: pointer;
+    border-radius: 15px ;
+    outline: none;
+    border: none;
+    transition: transform 0.2s ;
+}
+.Admin-Panel .admin-container .admin-skill button:active{
+    transform: scale(0.9);
+}
+.Admin-Panel .admin-container .admin-skill button svg{
+  font-size: 1.4rem;
+}
+.Admin-Panel .admin-container .admin-form form button:active{
+    top: 5px;
+}
+
+.Admin-Panel .admin-container .admin-skill,
+.Admin-Panel .admin-container .admin-form{
+    flex-direction: column;
+}
+
+@media screen and ( min-width: 400px ) {
+    .Admin-Panel .admin-container .admin-skill button{
+        padding: var(--display-5);
+        border-radius:100% ;
+        width: max-content;
+    }
+  .Admin-Panel .admin-container .single-skill{
+    flex-direction: row;
+  }
+}
+
+@media screen and ( min-width: 900px ) {
+    .Admin-Panel{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: var(--size-xl );
+        min-height: 95vh;
+       }
+       .Admin-Panel .admin-container {
+        justify-content: space-around;
+        flex-direction: row;
+       }     
+}
+
+@media screen and ( min-width: 1024px ) {
+
+}
+
+@media screen and ( min-width: 1200px ) {
+    .Admin-Panel{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: var(--size-small);
+        min-height: 95vh;
+       }
+}

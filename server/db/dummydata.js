@@ -62,8 +62,7 @@ async function populate() {
       {
         header: "Thirth Blog",
         subtitle: "second Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
+        content:"<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
         blogUrl: slugField("Thirth Blog"),
       },
     ]);

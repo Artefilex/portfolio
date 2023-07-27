@@ -30,8 +30,8 @@ function SkillCreate({onSuccess}) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form className="flex" onSubmit={handleSubmit}>
+      <div className="form-card flex">
         <h4>Skill</h4>
         <input
           type="text"
@@ -41,7 +41,7 @@ function SkillCreate({onSuccess}) {
         />
       </div>
 
-      <div>
+      <div  className="form-card flex">
         <h4> Average</h4>
         <input
           type="number"
@@ -52,9 +52,7 @@ function SkillCreate({onSuccess}) {
           onChange={(e) => handleChange(e, form, setForm)}
         />
       </div>
-      <div>
         <button type="submit"> Submit </button>
-      </div>
     </form>
   );
 }

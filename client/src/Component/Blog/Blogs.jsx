@@ -2,7 +2,6 @@ import {useState,useEffect} from "react";
 import {Link} from "react-router-dom"
 import Loading from "../Helpers/Loading";
 import Footer from "../Helpers/Footer";
-import FooterContact from "../Card/FooterContact";
 function Blogs() {
   const [blogs, setBlogs] = useState([]);
   
