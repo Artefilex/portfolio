@@ -35,7 +35,7 @@ async function populate() {
         header: "CoinFlex",
         content:
           "CoinFlex is a project I built using React, featuring a user-friendly interface that allows users to utilize a comprehensive calculator for calculating potential earnings based on annual, monthly, and daily interest rates of selected banks. Moreover, the platform keeps users up-to-date with daily foreign exchange rates and enables them to create personalized news entries categorized under specific topics.go to the credit url and start the calculation ",
-        projecturl: "https://eclectic-hummingbird-d2cdec.netlify.app",
+        projecturl: "https://eclectic-hummingbird-d2cdec.netlify.app/",
       },
       {
         header: "Course App",

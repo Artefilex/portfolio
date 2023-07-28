@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE_ENV=development&& nodemon index.js",
-    "prod": "set NODE_ENV=production&& set PORT=8080 && nodemon app.js",
-    "start": "node app.js "
+    "start": "node app.js ",
+    "build" : "npm i "
   },
   "dependencies": {
     "body-parser": "^1.20.2",
