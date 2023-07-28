@@ -16,7 +16,7 @@ function PortfolyCreate({ onSuccess }) {
     return {
       ...form,
       header: form.header.toUpperCase(),
-      subtitle: capitalizeFirstLetter(form.subtitle),
+      subtitle: capitalizeFirstLetter(form.header),
     };
   }, [form]);
 
