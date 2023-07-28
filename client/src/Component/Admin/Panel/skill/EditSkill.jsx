@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { handleChange } from "../../formUtils";
 
@@ -19,26 +19,31 @@ function EditSkill() {
       .then((data) => setForm(data));
   }, [id]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
 
-    const formData = {
-      ...form,
-      skillName: form.skillName.toUpperCase(),
-    };
+      const formData = {
+        ...form,
+        skillName: form.skillName.toUpperCase(),
+      };
+      try {
+        await fetch(
+          `${process.env.REACT_APP_HOST_URL}/admin/panel/skill/${id}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ form: formData }),
+          }
+        );
 
-    try {
-      await fetch(`${process.env.REACT_APP_HOST_URL}/admin/panel/skill/${id}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ form: formData }),
-      });
-
-      navigate("/admin/panel/");
-    } catch (error) {
-      console.error("POST işlemi sırasında bir hata oluştu:", error);
-    }
-  };
+        navigate("/admin/panel/");
+      } catch (error) {
+        console.error("POST işlemi sırasında bir hata oluştu:", error);
+      }
+    },
+    [form, id, navigate]
+  );
 
   return (
     <div className="Admin-Panel">
@@ -73,4 +78,4 @@ function EditSkill() {
   );
 }
 
-export default EditSkill;
+export default memo(EditSkill);

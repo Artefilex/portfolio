@@ -20,7 +20,7 @@ async function populate() {
     const portfolio = await Portfolio.bulkCreate([
       {
         header: "Travel App",
-       
+
         content:
           "I developed this website using React and Sass. It is a Travel application where users can sign up and shop for one or more travel packages of their choice.",
         projecturl: "https://artefilex-travel-app.netlify.app/",
@@ -46,11 +46,32 @@ async function populate() {
     ]);
     const blog = await Blog.bulkCreate([
       {
-        header: "First Blog",
+        header: "Firsascafst Blog",
         subtitle: "First Blog Good ",
         content:
           "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("First Blog"),
+        blogUrl: slugField("Firsascafst Blog"),
+      },
+      {
+        header: "Firsssst Blog",
+        subtitle: "First Blog Good ",
+        content:
+          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
+        blogUrl: slugField("Firsssst Blog"),
+      },
+      {
+        header: "FirsssBlogs",
+        subtitle: "First Blog Good ",
+        content:
+          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
+        blogUrl: slugField("FirsssBlogs"),
+      },
+      {
+        header: "FirsssBlog",
+        subtitle: "First Blog Good ",
+        content:
+          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
+        blogUrl: slugField("FirsssBlog"),
       },
       {
         header: "Second Blog",
@@ -62,7 +83,8 @@ async function populate() {
       {
         header: "Thirth Blog",
         subtitle: "second Blog Good ",
-        content:"<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
+        content:
+          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
         blogUrl: slugField("Thirth Blog"),
       },
     ]);

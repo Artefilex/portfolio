@@ -12,7 +12,7 @@ root.render(
     <Provider store={store}>
       <CookiesProvider>
         <BrowserRouter>
-           <App />
+          <App />
         </BrowserRouter>
       </CookiesProvider>
     </Provider>

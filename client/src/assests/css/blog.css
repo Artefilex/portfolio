@@ -113,12 +113,11 @@
   justify-content: space-around;
 }
 
-.Blog-Panel .admin-container .admin-form form .form-card{
-    flex-direction: column;
-
+.Blog-Panel .admin-container .admin-form form .form-card {
+  flex-direction: column;
 }
 
-.Blog-Panel .admin-container .admin-form form input{
+.Blog-Panel .admin-container .admin-form form input {
   width: var(--size-full);
   border: var(--border-white);
   outline: none;
@@ -126,79 +125,77 @@
   border-radius: 20px;
 }
 
-.Blog-Panel .admin-container .admin-form .edit-form h2{
-    width: var(--size-full);
+.Blog-Panel .admin-container .admin-form .edit-form h2 {
+  width: var(--size-full);
 }
 
-.Blog-Panel .admin-container .admin-form form .btn-send{
-    border: none;
-    width: var(--size-full);
-    outline: none;
-    position: relative;
-    cursor: pointer;
-    top: 0;
-    margin-top: 1rem;
-    background: var(--linear-button);
-    padding: var(--display-9);
-    color: var(--light-color);
-    border-radius: 20px;
-    transition: 0.4s top ease-in-out;
+.Blog-Panel .admin-container .admin-form form .btn-send {
+  border: none;
+  width: var(--size-full);
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  margin-top: 1rem;
+  background: var(--linear-button);
+  padding: var(--display-9);
+  color: var(--light-color);
+  border-radius: 20px;
+  transition: 0.4s top ease-in-out;
 }
-.Blog-Panel .admin-container .admin-form form .quill{
-    width: var(--size-full);
+.Blog-Panel .admin-container .admin-form form .quill {
+  width: var(--size-full);
 }
-.Blog-Panel .admin-container .admin-form form .ql-editor{
-    height: 15rem;
-    padding: var(--display-3);
-    overflow: auto;
-    resize: none;
-    font-size: 1rem;
+.Blog-Panel .admin-container .admin-form form .ql-editor {
+  height: 15rem;
+  padding: var(--display-3);
+  overflow: auto;
+  resize: none;
+  font-size: 1rem;
 }
 .Blog-Panel .admin-container .admin-form form .ql-toolbar {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
-.Blog-Panel .admin-container .admin-form form .ql-container{
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+.Blog-Panel .admin-container .admin-form form .ql-container {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-.Blog-Panel .admin-container .admin-card .single-card button{
-    background: var(--linear-button);
-    width: var(--size-half);
-    padding: var(--display-9);
-    color: var(--light-color);
-    cursor: pointer;
-    border-radius: 15px ;
-    outline: none;
-    border: none;
-    transition: transform 0.2s ;
+.Blog-Panel .admin-container .admin-card .single-card button {
+  background: var(--linear-button);
+  width: var(--size-half);
+  padding: var(--display-9);
+  color: var(--light-color);
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  transition: transform 0.2s;
 }
-.Blog-Panel .admin-container .admin-card button:active{
-    transform: scale(0.9);
+.Blog-Panel .admin-container .admin-card button:active {
+  transform: scale(0.9);
 }
-.Blog-Panel .admin-container .admin-card button svg{
+.Blog-Panel .admin-container .admin-card button svg {
   font-size: 1.4rem;
 }
-.Blog-Panel .admin-container .admin-form form button:active{
-    top: 5px;
+.Blog-Panel .admin-container .admin-form form button:active {
+  top: 5px;
 }
 .Blog-Panel .admin-container .admin-card,
-.Blog-Panel .admin-container .admin-form{
-    flex-direction: column;
+.Blog-Panel .admin-container .admin-form {
+  flex-direction: column;
 }
 
-@media screen and ( min-width: 400px ) {
-    .Blog-Panel .admin-container .admin-card .single-card button{
-        padding: var(--display-5);
-        border-radius:100% ;
-        width: max-content;
-    }
-  .Blog-Panel .admin-container .single-card{
+@media screen and (min-width: 400px) {
+  .Blog-Panel .admin-container .admin-card .single-card button {
+    padding: var(--display-5);
+    border-radius: 100%;
+    width: max-content;
+  }
+  .Blog-Panel .admin-container .single-card {
     flex-direction: row;
   }
 }
-
-
 
 @media screen and (min-width: 560px) {
   .User-blog {
@@ -236,13 +233,13 @@
   .User-blog {
     width: var(--size-medium);
   }
-  .Blog-Panel{
-    width: var(--size-xl );
-   }
-   .Blog-Panel .admin-container {
+  .Blog-Panel {
+    width: var(--size-xl);
+  }
+  .Blog-Panel .admin-container {
     justify-content: space-around;
     flex-direction: row;
-   }  
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -262,11 +259,11 @@
   .Blog-Details {
     gap: 1.5rem;
   }
-  .Blog-Panel{
+  .Blog-Panel {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     width: var(--size-small);
     min-height: 95vh;
-   }
+  }
 }

@@ -18,15 +18,15 @@
 .Contact .form-container {
   flex-direction: column;
 }
-.Contact .form-container .contact-info{
-    justify-content: flex-start;
+.Contact .form-container .contact-info {
+  justify-content: flex-start;
 }
 
 .Contact .form-container p,
 .Contact .form-container .icon {
-    color:var(--card-light)
-  }
-  
+  color: var(--card-light);
+}
+
 .Contact .form-container .contact-form {
   flex-direction: column;
   position: none;
@@ -59,59 +59,56 @@
   resize: none;
 }
 
-
-.btn-send{
-    position: relative;
-    top: 0;
-    width: var(--size-full);
-    padding: var(--display-9);
-    border:  var(--white-button-border);
-    outline: none;
-    background: transparent;
-    border-radius: 16px;
+.btn-send {
+  position: relative;
+  top: 0;
+  width: var(--size-full);
+  padding: var(--display-9);
+  border: var(--white-button-border);
+  outline: none;
+  background: transparent;
+  border-radius: 16px;
 }
-.btn-send span{
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    transition: 0.1s top  ease-in-out;
-    color: var(--white-bg);
-}
-
-.btn-send:active{
-    top: 0.2rem;
-   
+.btn-send span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: 0.1s top ease-in-out;
+  color: var(--white-bg);
 }
 
-.contact-icon{
-    display: none;
+.btn-send:active {
+  top: 0.2rem;
 }
 
-@media screen and (min-width:270px ){
-    .contact-icon{
-        display: flex;
-    }
-}
-@media screen and (min-width:600px ) {
-    .Contact {
-        width: var(--size-xl);
-        flex-direction: row;
-        padding: 1.5rem 1rem;
-      
-      }
+.contact-icon {
+  display: none;
 }
 
-@media screen and (min-width:900px ) {
-    .Contact {
-        align-items: flex-start;
-        width: var(--size-large);
-        padding: 1rem 2rem;
-      }
+@media screen and (min-width: 270px) {
+  .contact-icon {
+    display: flex;
+  }
+}
+@media screen and (min-width: 600px) {
+  .Contact {
+    width: var(--size-xl);
+    flex-direction: row;
+    padding: 1.5rem 1rem;
+  }
 }
 
-@media screen and (min-width:1200px ) {
-    .Contact {
-        width: var(--size-small);
-        padding: 2rem 4rem;
-      }
+@media screen and (min-width: 900px) {
+  .Contact {
+    align-items: flex-start;
+    width: var(--size-large);
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Contact {
+    width: var(--size-small);
+    padding: 2rem 4rem;
+  }
 }

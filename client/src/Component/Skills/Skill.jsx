@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect ,memo} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSkills } from "../../Reducer/skillreducer";
 import Aos from "aos";
@@ -56,4 +56,4 @@ function Skill() {
   );
 }
 
-export default Skill;
+export default memo( Skill );

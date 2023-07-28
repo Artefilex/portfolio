@@ -4,9 +4,9 @@ const app = express();
 const path = require("path");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 
-dotenv.config({path: "./config.env"})
+dotenv.config({ path: "./config.env" });
 
 // database connection
 const sequelizeDb = require("./db/sql");
@@ -33,11 +33,11 @@ app.use(cookieParser());
 app.use(
   session({
     secret: process.env.SECRETKEY,
-    saveUninitialized:true,
-    cookie: {maxAge:1000*60*60*24 ,httpOnly: true},
-    resave: false 
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24, httpOnly: true },
+    resave: false,
   })
-)
+);
 
 app.use("/", main);
 app.use("/about", about);

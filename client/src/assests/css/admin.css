@@ -1,150 +1,148 @@
-.Admin-Panel{
- flex-direction: column;
- justify-content: flex-start;
- align-items: flex-start;
- width: var(--size-full);
- min-height: 95vh;
+.Admin-Panel {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: var(--size-full);
+  min-height: 95vh;
 }
 
-.Admin-Panel .admin-container{
-    width: var(--size-xxl);
-    margin: 1rem 0.5rem;
-    align-items: flex-start;
-    flex-direction: column;
+.Admin-Panel .admin-container {
+  width: var(--size-xxl);
+  margin: 1rem 0.5rem;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .Admin-Panel .admin-container .admin-form,
-.Admin-Panel .admin-container .admin-card{
-    gap: 0.5rem;
-   
+.Admin-Panel .admin-container .admin-card {
+  gap: 0.5rem;
 }
-.Admin-Panel .admin-container .single-card{
-    justify-content: space-between;
-    padding: var(--display-7);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow-card);
-    border: var(--border-white2);
-    flex-direction: column;
+.Admin-Panel .admin-container .single-card {
+  justify-content: space-between;
+  padding: var(--display-7);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-card);
+  border: var(--border-white2);
+  flex-direction: column;
 }
-.Admin-Panel .admin-container .project{
-    align-items: flex-start;
-    min-height: 10rem;
+.Admin-Panel .admin-container .project {
+  align-items: flex-start;
+  min-height: 10rem;
 }
-.Admin-Panel .admin-container .single-card span{
-  font-size: 1.2rem; 
+.Admin-Panel .admin-container .single-card span {
+  font-size: 1.2rem;
   font-weight: 700;
   padding: var(--display-7);
 }
 
-.Admin-Panel .admin-container .admin-form form{
-    min-height: 20rem;
-    padding: var(--display-7);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow-card);
-    border: var(--border-white2);
-    flex-direction: column;
-    justify-content: space-around;
+.Admin-Panel .admin-container .admin-form form {
+  min-height: 20rem;
+  padding: var(--display-7);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-card);
+  border: var(--border-white2);
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.Admin-Panel .admin-container .admin-form form .form-card{
-    flex-direction: column;
-
+.Admin-Panel .admin-container .admin-form form .form-card {
+  flex-direction: column;
 }
 
-.Admin-Panel .admin-container .admin-form form input{
+.Admin-Panel .admin-container .admin-form form input {
   width: var(--size-full);
   border: var(--border-white);
   outline: none;
   padding: var(--display-8);
   border-radius: 20px;
 }
-.Admin-Panel .admin-container .admin-form form textarea{
-    width: var(--size-full);
-    border: var(--border-white);
-    outline: none;
-    padding: var(--display-3);
-    border-radius: 20px;
-    overflow: auto;
-    resize: none;
-    font-size: 1rem;
+.Admin-Panel .admin-container .admin-form form textarea {
+  width: var(--size-full);
+  border: var(--border-white);
+  outline: none;
+  padding: var(--display-3);
+  border-radius: 20px;
+  overflow: auto;
+  resize: none;
+  font-size: 1rem;
 }
-.Admin-Panel .admin-container .admin-form .edit-form h2{
-    width: var(--size-full);
+.Admin-Panel .admin-container .admin-form .edit-form h2 {
+  width: var(--size-full);
 }
-.Admin-Panel .admin-container .admin-form .edit-form textarea{
-    height: 20rem;
+.Admin-Panel .admin-container .admin-form .edit-form textarea {
+  height: 20rem;
 }
-.Admin-Panel .admin-container .admin-form form button{
-    border: none;
-    width: var(--size-full);
-    outline: none;
-    position: relative;
-    cursor: pointer;
-    top: 0;
-    margin-top: 1rem;
-    background: var(--linear-button);
-    padding: var(--display-9);
-    color: var(--light-color);
-    border-radius: 20px;
-    transition: 0.4s top ease-in-out;
+.Admin-Panel .admin-container .admin-form form button {
+  border: none;
+  width: var(--size-full);
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  margin-top: 1rem;
+  background: var(--linear-button);
+  padding: var(--display-9);
+  color: var(--light-color);
+  border-radius: 20px;
+  transition: 0.4s top ease-in-out;
 }
-.Admin-Panel .admin-container .admin-card button{
-    background: var(--linear-button);
-    width: var(--size-half);
-    padding: var(--display-9);
-    color: var(--light-color);
-    cursor: pointer;
-    border-radius: 15px ;
-    outline: none;
-    border: none;
-    transition: transform 0.2s ;
+.Admin-Panel .admin-container .admin-card button {
+  background: var(--linear-button);
+  width: var(--size-half);
+  padding: var(--display-9);
+  color: var(--light-color);
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  transition: transform 0.2s;
 }
-.Admin-Panel .admin-container .admin-card button:active{
-    transform: scale(0.9);
+.Admin-Panel .admin-container .admin-card button:active {
+  transform: scale(0.9);
 }
-.Admin-Panel .admin-container .admin-card button svg{
+.Admin-Panel .admin-container .admin-card button svg {
   font-size: 1.4rem;
 }
-.Admin-Panel .admin-container .admin-form form button:active{
-    top: 5px;
+.Admin-Panel .admin-container .admin-form form button:active {
+  top: 5px;
 }
 
 .Admin-Panel .admin-container .admin-card,
-.Admin-Panel .admin-container .admin-form{
-    flex-direction: column;
+.Admin-Panel .admin-container .admin-form {
+  flex-direction: column;
 }
 
-.Login-Panel{
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 10rem;
+.Login-Panel {
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10rem;
 }
-.Admin-Panel .login{
-    max-width: 25rem;
+.Admin-Panel .login {
+  max-width: 25rem;
 }
 
-@media screen and ( min-width: 400px ) {
-    .Admin-Panel .admin-container .admin-card button{
-        padding: var(--display-5);
-        border-radius:100% ;
-        width: max-content;
-    }
-  .Admin-Panel .admin-container .single-card{
+@media screen and (min-width: 400px) {
+  .Admin-Panel .admin-container .admin-card button {
+    padding: var(--display-5);
+    border-radius: 100%;
+    width: max-content;
+  }
+  .Admin-Panel .admin-container .single-card {
     flex-direction: row;
   }
 }
 
-@media screen and ( min-width: 900px ) {
-    .Admin-Panel{
-        flex-direction: column;
-        width: var(--size-xl );
-       }
-       .Admin-Panel .admin-container {
-        justify-content: space-around;
-        flex-direction: row;
-       }     
+@media screen and (min-width: 900px) {
+  .Admin-Panel {
+    flex-direction: column;
+    width: var(--size-xl);
+  }
+  .Admin-Panel .admin-container {
+    justify-content: space-around;
+    flex-direction: row;
+  }
 }
-@media screen and ( min-width: 1200px ) {
-    .Admin-Panel{
-        width: var(--size-small);  
-       }
+@media screen and (min-width: 1200px) {
+  .Admin-Panel {
+    width: var(--size-small);
+  }
 }

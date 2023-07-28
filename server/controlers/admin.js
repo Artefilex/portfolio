@@ -13,7 +13,7 @@ exports.blog_list = async (req, res) => {
   }
 };
 
-exports.blog_create = async (req, res, ) => {
+exports.blog_create = async (req, res) => {
   const form = req.body.form;
   try {
     await Blog.create({
@@ -22,7 +22,7 @@ exports.blog_create = async (req, res, ) => {
       content: form.content,
       blogUrl: slugField(form.header),
     });
-    res.send(`${form} success`)
+    res.send(`${form} success`);
   } catch (err) {
     console.log(err);
   }
@@ -45,17 +45,17 @@ exports.blog_edit = async (req, res) => {
     }
   } else if (req.method === "POST") {
     const form = req.body.form;
-   
+
     try {
       const blog = await Blog.findOne({ where: { id: form.id } });
       if (blog) {
-        blog.header = form.header,
-        blog.content = form.content,
-        blog.subtitle = form.subtitle,
-        blog.blogUrl = slugField(form.header);
+        (blog.header = form.header),
+          (blog.content = form.content),
+          (blog.subtitle = form.subtitle),
+          (blog.blogUrl = slugField(form.header));
       }
       await blog.save();
-      res.send(`${form.id} blog edit`)
+      res.send(`${form.id} blog edit`);
     } catch (err) {
       console.log(err);
     }
@@ -79,7 +79,6 @@ exports.blog_delete = async (req, res) => {
     console.log(err);
   }
 };
-
 
 exports.panel_list = async (req, res) => {
   try {
@@ -126,7 +125,7 @@ exports.skill_edit = async (req, res) => {
           (skill.skillLevel = form.skillLevel);
       }
       skill.save();
-      res.send(`${form.id} update success`)
+      res.send(`${form.id} update success`);
     } catch (err) {
       console.log(err);
     }
@@ -134,21 +133,20 @@ exports.skill_edit = async (req, res) => {
 };
 exports.skill_create = async (req, res) => {
   const form = req.body.form;
-  console.log(form)
+  console.log(form);
   try {
     await Skill.create({
       skillName: form.skillName,
       skillLevel: form.skillLevel,
     });
     res.send("skill Create");
-    
   } catch (err) {
     console.log(err);
   }
 };
 exports.skill_remove = async (req, res) => {
   const deleteSkill = req.body.id;
- 
+
   try {
     const skill = await Skill.findOne({
       where: {
@@ -157,7 +155,7 @@ exports.skill_remove = async (req, res) => {
     });
     if (skill) {
       await skill.destroy();
-      res.send(`${deleteSkill} delete success `)
+      res.send(`${deleteSkill} delete success `);
     }
   } catch (err) {
     console.log(err);
@@ -194,7 +192,7 @@ exports.portfoly_edit = async (req, res) => {
         portfolio.projecturl = form.projecturl;
       }
       portfolio.save();
-      res.send(`${form.id} update success`)
+      res.send(`${form.id} update success`);
     } catch (err) {
       console.log(err);
     }
@@ -224,8 +222,7 @@ exports.portfoly_remove = async (req, res) => {
     });
     if (portfoly) {
       await portfoly.destroy();
-      res.send(`${deleteportfoly} deleting success `)
-      
+      res.send(`${deleteportfoly} deleting success `);
     }
   } catch (err) {
     console.log(err);

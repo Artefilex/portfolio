@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useMemo ,useCallback, memo } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { handleChange, onEditorChange } from "../formUtils";
@@ -25,16 +25,20 @@ function CreateBlog({onSuccess}) {
       ["link", "image", "video"],
     ],
   };
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  const formData = {
-     header: form.header.toUpperCase(),
-     subtitle:  capitalizeFirstLetter(form.subtitle),
-     content: form.content
-  };
 
-  const handleSubmit = async (e) => {
+  const formData = useMemo(() => {
+    const capitalizeFirstLetter = (text) => {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    };
+
+    return {
+      ...form,
+      header: form.header.toUpperCase(),
+      subtitle: capitalizeFirstLetter(form.subtitle)
+    };
+  }, [form]);
+
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
    await fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/create`, {
       method: "POST",
@@ -55,7 +59,7 @@ function CreateBlog({onSuccess}) {
       
     });
     onSuccess()
-  };
+  },[onSuccess,formData]);
 
   return (
 
@@ -100,4 +104,4 @@ function CreateBlog({onSuccess}) {
   );
 }
 
-export default CreateBlog;
+export default memo(CreateBlog);

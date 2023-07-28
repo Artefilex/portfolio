@@ -1,33 +1,36 @@
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { handleChange } from "../../formUtils";
-function SkillCreate({onSuccess}) {
+function SkillCreate({ onSuccess }) {
   const [form, setForm] = useState({
     skillName: "",
     skillLevel: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = {
-      skillName: form.skillName.toUpperCase(),
-      skillLevel: form.skillLevel,
-    };
-    const response = await fetch(
-      `${process.env.REACT_APP_HOST_URL}/admin/panel/skill/create`,
-      {
-        method: "POST",
-        headers: {"Content-Type": "application/Json"},
-        body: JSON.stringify({ form: formData }),
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      const formData = {
+        skillName: form.skillName.toUpperCase(),
+        skillLevel: form.skillLevel,
+      };
+      const response = await fetch(
+        `${process.env.REACT_APP_HOST_URL}/admin/panel/skill/create`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/Json" },
+          body: JSON.stringify({ form: formData }),
+        }
+      );
+      if (response.ok) {
+        setForm({
+          skillName: "",
+          skillLevel: "",
+        });
+        onSuccess();
       }
-    );
-    if (response.ok) {
-      setForm({
-        skillName: "",
-        skillLevel: "",
-      });
-      onSuccess()
-    }
-  };
+    },
+    [form.skillLevel, form.skillName, onSuccess]
+  );
 
   return (
     <form className="flex" onSubmit={handleSubmit}>
@@ -41,7 +44,7 @@ function SkillCreate({onSuccess}) {
         />
       </div>
 
-      <div  className="form-card flex">
+      <div className="form-card flex">
         <h4> Average</h4>
         <input
           type="number"
@@ -52,9 +55,9 @@ function SkillCreate({onSuccess}) {
           onChange={(e) => handleChange(e, form, setForm)}
         />
       </div>
-        <button type="submit"> Submit Skill </button>
+      <button type="submit"> Submit Skill </button>
     </form>
   );
 }
 
-export default SkillCreate;
+export default memo(SkillCreate);

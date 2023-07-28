@@ -65,15 +65,12 @@ nav {
 .navbar .navbar-logo a {
   width: 6rem;
   align-items: center;
- 
 }
 
 .navbar .navbar-logo a img {
   /* filter: invert(100%); */
   height: 40px;
 }
-
-
 
 @media screen and (min-width: 630px) {
   .navbar .navbar-item .navbar-links ul {
@@ -87,7 +84,7 @@ nav {
     z-index: 10000;
   }
   .navbar .navbar-item {
-    width:var(--size-full);
+    width: var(--size-full);
   }
   .navbar .navbar-logo {
     width: var(--size-full);

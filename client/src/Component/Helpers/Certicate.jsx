@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "../../assests/css/slide.css";
 import node from "../../assests/image/certiciate/nodejs.jpg";
 import jquery from "../../assests/image/certiciate/jquery.jpg";
@@ -14,21 +14,21 @@ import Slider from "react-slick";
 
 const certificates = [node, jquery, sql, react, web1, web2, web3];
 function Certicate() {
-    const NextArrow = ({ onClick }) => {
-        return (
-          <div className="arrow next" onClick={onClick}>
-            <FaArrowRight />
-          </div>
-        );
-      };
-    
-      const PrevArrow = ({ onClick }) => {
-        return (
-          <div className="arrow prev" onClick={onClick}>
-            <FaArrowLeft />
-          </div>
-        );
-      };
+  const NextArrow = ({ onClick }) => {
+    return (
+      <div className="arrow next" onClick={onClick}>
+        <FaArrowRight />
+      </div>
+    );
+  };
+
+  const PrevArrow = ({ onClick }) => {
+    return (
+      <div className="arrow prev" onClick={onClick}>
+        <FaArrowLeft />
+      </div>
+    );
+  };
   const [imageIndex, setImageIndex] = useState(0);
 
   const settings = {
@@ -48,7 +48,10 @@ function Certicate() {
       <h1>Certificate</h1>
       <Slider {...settings}>
         {certificates.map((c, i) => (
-          <div key={i} className={i === imageIndex ? "slide activeSlide" : "slide"}>
+          <div
+            key={i}
+            className={i === imageIndex ? "slide activeSlide" : "slide"}
+          >
             <img src={c} alt={c} />
           </div>
         ))}
@@ -57,4 +60,4 @@ function Certicate() {
   );
 }
 
-export default Certicate;
+export default memo(Certicate);

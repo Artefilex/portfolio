@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "../assests/css/main.css";
 import IntroCard from "./Card/IntroCard";
 import Header from "./Helpers/Header";
@@ -6,16 +7,15 @@ import Footer from "./Helpers/Footer";
 import SkillCard from "./Card/SkillCard";
 
 function Home() {
- 
   return (
     <div className="main flex">
-      <Header/>
-      <SkillCard/>
-      <IntroCard/>
-      <FooterCard/>
-      <Footer/>
+      <Header />
+      <SkillCard />
+      <IntroCard />
+      <FooterCard />
+      <Footer />
     </div>
   );
 }
 
-export default Home;
+export default memo(Home);

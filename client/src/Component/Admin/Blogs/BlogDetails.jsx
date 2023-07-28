@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,memo ,useCallback,useMemo} from "react";
 import ReactQuill from "react-quill";
 import "../../../assests/css/blog.css"
 import { useNavigate  } from "react-router-dom"
@@ -25,15 +25,18 @@ const navigate = useNavigate()
       ["link", "image", "video"],
     ],
   };
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  const formData = {
-    ...form,
-     header: form.header.toUpperCase(),
-     subtitle:  capitalizeFirstLetter(form.subtitle),
-  
-  };
+
+  const formData = useMemo(() => {
+    const capitalizeFirstLetter = (text) => {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    };
+
+    return {
+      ...form,
+      header: form.header.toUpperCase(),
+      subtitle: capitalizeFirstLetter(form.subtitle)
+    };
+  }, [form]);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`, {
@@ -46,7 +49,7 @@ const navigate = useNavigate()
 
  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     fetch(`${process.env.REACT_APP_HOST_URL}/admin/blogs/${lastPart}`, {
       method: "POST",
@@ -55,7 +58,7 @@ const navigate = useNavigate()
     });
    navigate("/admin/blogs")
 
-  };
+  },[navigate, formData ,lastPart]);
 
   return (
   <div className="Blog-Panel flex">
@@ -102,4 +105,4 @@ const navigate = useNavigate()
   );
 }
 
-export default BlogDetails;
+export default memo(BlogDetails);

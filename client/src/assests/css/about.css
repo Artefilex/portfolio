@@ -2,7 +2,8 @@
   flex-direction: column;
   width: var(--size-large);
 }
-.about-card h1 , li {
+.about-card h1,
+li {
   background: var(--linear-color-1);
   -webkit-background-clip: text;
   background-clip: text;
@@ -18,33 +19,32 @@
   flex-direction: column;
   align-items: flex-start;
 }
- .about-card .about-image img {
-    width: var(--size-large)
+.about-card .about-image img {
+  width: var(--size-large);
 }
 
-.about-container .about-card .hire-content h1{
+.about-container .about-card .hire-content h1 {
   width: var(--size-full);
-} 
+}
 .about-container .about-card .hire-content ul {
-   flex-direction: column;
-   align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .about-container .about-card .hire-content ul li {
-    font-size: 1.2rem;
-
+  font-size: 1.2rem;
 }
-.about-container .about-card  p{
+.about-container .about-card p {
   font-size: 1.2rem;
 }
 @media screen and (min-width: 400px) {
-    .about-container .about-card .about-image img {
-        width: 300px;
-    }
+  .about-container .about-card .about-image img {
+    width: 300px;
+  }
 }
 @media screen and (min-width: 600px) {
   .about-container .about-card .about-image img {
-      width: 400px;
+    width: 400px;
   }
 }
 @media screen and (min-width: 900px) {
@@ -64,8 +64,8 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .about-container .about-card {
-        width: var(--size-small);
-        flex-direction: row;
-      }
+  .about-container .about-card {
+    width: var(--size-small);
+    flex-direction: row;
+  }
 }

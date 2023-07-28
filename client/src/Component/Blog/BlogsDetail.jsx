@@ -1,14 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../Helpers/Loading";
 import FooterContact from "../Card/FooterContact";
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "SET_BLOGS":
+      return { ...state, blogs: action.payload };
+    case "SET_BLOG":
+      return { ...state, blog: action.payload };
+    default:
+      return state;
+  }
+};
 
 function BlogsDetail() {
   const baseUrl = window.location.origin;
   const url = window.location.href.split("/").pop();
-  const [blog, setBlog] = useState([]);
-  const [blogs, setBlogs] = useState([]);
+  const initialState = {
+    blog: null,
+    blogs: [],
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_HOST_URL}/blogs/${url}`, {
       method: "GET",
@@ -16,39 +31,45 @@ function BlogsDetail() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setBlog(data.blog);
-        setBlogs(data.blogs);
+        // State değişikliklerini birleştirmek için useReducer kullanalım
+        dispatch({ type: "SET_BLOG", payload: data.blog });
+        dispatch({ type: "SET_BLOGS", payload: data.blogs });
       });
   }, [url]);
-  if(!blog){
-    return <Loading/>
+
+  // state değişkenlerine daha rahat erişelim
+  const { blog, blogs } = state;
+
+  if (!blog) {
+    return <Loading />;
+  }
+  if (!blog) {
+    return <Loading />;
   }
 
   return (
     <div className="Blog flex">
-  
-    <div className="Blog-Details flex">
-      <div className="single-blog flex">
-        <div className="single-blog-header">
-          <h2>{blog.header}</h2>
-          <p>{blog.subtitle}</p>
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: blog.content }}></div>
-      </div>
-      <div className="other-blog flex">
-        {blogs.map((item) => (
-          <div key={item.id} className="blog-link">
-            <Link to={`${baseUrl}/blogs/${item.blogUrl}`}>
-              <h3>{item.header}</h3>
-              <p>{item.subtitle}</p>
-            </Link>
+      <div className="Blog-Details flex">
+        <div className="single-blog flex">
+          <div className="single-blog-header">
+            <h2>{blog.header}</h2>
+            <p>{blog.subtitle}</p>
           </div>
-        ))}
+          <div dangerouslySetInnerHTML={{ __html: blog.content }}></div>
+        </div>
+        <div className="other-blog flex">
+          {blogs.map((item) => (
+            <div key={item.id} className="blog-link">
+              <Link to={`${baseUrl}/blogs/${item.blogUrl}`}>
+                <h3>{item.header}</h3>
+                <p>{item.subtitle}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>  
-    
-    <FooterContact/>
-    
+
+      <FooterContact />
     </div>
   );
 }

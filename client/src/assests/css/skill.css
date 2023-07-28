@@ -31,43 +31,43 @@ p {
   margin-top: 2rem;
 }
 
- .skillcard-container {
+.skillcard-container {
   flex-direction: column;
 }
 
- .skillcard-container .skillcard-context {
+.skillcard-container .skillcard-context {
   flex-direction: column;
 }
 
- .skillcard-container .skillcard-context p {
+.skillcard-container .skillcard-context p {
   text-transform: capitalize;
   font-size: 2rem;
   margin-left: 1rem;
   background-image: var(--linear-color-1);
 }
- .skillcard-container .skillcard-context ul {
+.skillcard-container .skillcard-context ul {
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
   max-width: 30rem;
 }
- .skillcard-container .skillcard-context ul li {
+.skillcard-container .skillcard-context ul li {
   flex-direction: column;
   width: 9rem;
   position: relative;
 }
- .skillcard-container .skillcard-context ul li p {
+.skillcard-container .skillcard-context ul li p {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
 }
- .skillcard-container .skillcard-context ul li .info-icon {
+.skillcard-container .skillcard-context ul li .info-icon {
   position: relative;
   padding: 1rem;
   border: var(--border-icon);
   border-radius: 13rem;
 }
- .skillcard-container .skillcard-context ul li .info-icon span {
+.skillcard-container .skillcard-context ul li .info-icon span {
   position: absolute;
   top: 3rem;
   background: var(--white-bg);
@@ -76,12 +76,7 @@ p {
   left: 1.6rem;
 }
 
-  .skillcard-container
-  .skillcard-context
-  ul
-  li:nth-child(1)
-  .info-icon
-  span {
+.skillcard-container .skillcard-context ul li:nth-child(1) .info-icon span {
   left: 1.1rem;
 }
 
@@ -136,12 +131,15 @@ p {
   font-size: 2rem;
   color: var(--icon-color);
 }
-.IntroCard-contanier{
+.IntroCard-contanier {
   flex-direction: column;
- }
-.right-card{
- flex-direction: column-reverse;
-} 
+}
+.container-reverse {
+  flex-direction: column-reverse;
+}
+.right-card {
+  flex-direction: column-reverse;
+}
 
 .intro-card-buttons {
   flex-direction: column;
@@ -162,9 +160,12 @@ p {
   }
 }
 @media screen and (min-width: 650px) {
- .IntroCard-contanier{
-  flex-direction: row;
- }
+  .IntroCard-contanier {
+    flex-direction: row;
+  }
+  .container-reverse {
+    flex-direction: row;
+  }
 }
 @media screen and (min-width: 900px) {
   .skill-content {
@@ -183,7 +184,6 @@ p {
     justify-content: flex-start;
     align-items: flex-start;
   }
- 
 }
 @media screen and (min-width: 1000px) {
   .skill-content {
@@ -204,6 +204,4 @@ p {
   .skill-content {
     width: var(--size-small);
   }
-  
 }
-

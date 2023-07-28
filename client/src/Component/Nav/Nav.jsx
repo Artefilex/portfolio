@@ -1,17 +1,17 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect, memo , useCallback} from "react";
 import Links from "./Links/Links";
 import "../../assests/css/nav.css";
 import Logo from "../../assests/image/main/logo.png";
 import { Link } from "react-router-dom";
-import {  GiHamburgerMenu } from "react-icons/gi"
-import { GrClose} from "react-icons/gr"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
 function Nav() {
-  const [show , setShow] = useState(false)
-const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
+  const [show, setShow] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
 
-  const handleClick = () =>{
-    setShow(!show)
-  }
+  const handleClick = useCallback(() => {
+    setShow(!show);
+  },[show])
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,7 +24,6 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
 
   return (
     <nav className="navbar flex">
@@ -34,18 +33,31 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
         </Link>
       </div>
       <div className="navbar-item flex ">
-     
-     <div className="navbar-links flex">
-     {
-      <ul className={`${show ? 'active' : ''}`}> <Links/></ul> 
-      }
-     </div>
-     {isMobile && (<div className="navbar-btn flex">
-     {show ?  <button onClick={handleClick} > <GrClose/>  </button> :  <button onClick={handleClick} ><GiHamburgerMenu/> </button>}
-     </div> ) }
+        <div className="navbar-links flex">
+          {
+            <ul className={`${show ? "active" : ""}`}>
+              {" "}
+              <Links />
+            </ul>
+          }
+        </div>
+        {isMobile && (
+          <div className="navbar-btn flex">
+            {show ? (
+              <button onClick={handleClick}>
+                {" "}
+                <GrClose />{" "}
+              </button>
+            ) : (
+              <button onClick={handleClick}>
+                <GiHamburgerMenu />{" "}
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </nav>
   );
 }
 
-export default Nav;
+export default memo(Nav);
