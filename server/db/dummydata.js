@@ -44,50 +44,7 @@ async function populate() {
         projecturl: "https://simple-course-app.netlify.app/",
       },
     ]);
-    const blog = await Blog.bulkCreate([
-      {
-        header: "Firsascafst Blog",
-        subtitle: "First Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("Firsascafst Blog"),
-      },
-      {
-        header: "Firsssst Blog",
-        subtitle: "First Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("Firsssst Blog"),
-      },
-      {
-        header: "FirsssBlogs",
-        subtitle: "First Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("FirsssBlogs"),
-      },
-      {
-        header: "FirsssBlog",
-        subtitle: "First Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("FirsssBlog"),
-      },
-      {
-        header: "Second Blog",
-        subtitle: "First Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("second Blog"),
-      },
-      {
-        header: "Thirth Blog",
-        subtitle: "second Blog Good ",
-        content:
-          "<h1>barış tuncdemir </h1><p><br></p><p><br></p><h3>ı have one choice but ı dont now any think </h3>",
-        blogUrl: slugField("Thirth Blog"),
-      },
-    ]);
+   
   }
 }
 
