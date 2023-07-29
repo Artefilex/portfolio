@@ -36,7 +36,6 @@ function Blogs() {
           </div>
         ))}
       </div>
-      ;
       <Footer />
     </div>
   );
