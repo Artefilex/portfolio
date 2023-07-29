@@ -21,7 +21,7 @@ const admin = require("./routes/admin");
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://artefilex-portfoly.netlify.app",
+    origin: "*",
     methods: ["GET", "POST"],
   })
 );
