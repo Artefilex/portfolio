@@ -9,7 +9,6 @@
 }
 
 .skill-content h4 {
-  width: 4.5rem;
   white-space: nowrap;
 }
 .skill-content h5 {
@@ -87,7 +86,7 @@ p {
   flex-direction: column;
 }
 .skill-content .skill-container .skill-item .skill-item-header {
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 0;
 }
