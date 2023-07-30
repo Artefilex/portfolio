@@ -51,9 +51,9 @@ function BlogsDetail() {
     <div className="Blog flex">
       <div className="Blog-Details flex">
         <div className="single-blog flex">
-          <div className="single-blog-header">
-            <h2>{blog.header}</h2>
-            <p>{blog.subtitle}</p>
+          <div className="single-blog-header flex">
+            <h3>{blog.header}</h3>
+            <h4>{blog.subtitle}</h4>
           </div>
           <div dangerouslySetInnerHTML={{ __html: blog.content }}></div>
         </div>

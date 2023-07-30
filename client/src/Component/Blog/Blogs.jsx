@@ -31,7 +31,7 @@ function Blogs() {
           >
             <Link className="flex" to={`/blogs/${blog.blogUrl}`}>
               <h2>{blog.header} </h2>
-              <p> {blog.subtitle}</p>
+              <h4> {blog.subtitle}</h4>
             </Link>
           </div>
         ))}
