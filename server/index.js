@@ -45,7 +45,7 @@ app.use("/admin", admin);
 app.use("/libs", express.static(path.join(__dirname, "node_modules")));
 
 async function sync() {
-  await sequelizeDb.sync({ force: true });
+  await sequelizeDb.sync({ alter: true });
   await dummyData();
 }
 sync();
