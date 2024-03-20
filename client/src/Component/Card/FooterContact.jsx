@@ -17,15 +17,15 @@ function FooterContact() {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const handleChange = useCallback((e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
-  }, []);
+  }
 
-  const handleSubmit = useCallback(
+  const handleSubmit = 
     (e) => {
       e.preventDefault();
       fetch(`${process.env.REACT_APP_HOST_URL}/about`, {
@@ -40,9 +40,9 @@ function FooterContact() {
         email: "",
         message: "",
       });
-    },
-    [form]
-  );
+    }
+   
+  
 
   return (
     <div className="Contact flex">
