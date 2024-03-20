@@ -21,8 +21,8 @@ const admin = require("./routes/admin");
 const cors = require("cors");
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST"],
+    origin: "https://portfolyapp.onrender.com",
+    methods: ["GET", "POST", "DELETE"],
   })
 );
 
